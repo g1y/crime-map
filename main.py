@@ -1,4 +1,6 @@
 import pycurl
+import re
+
 from StringIO import StringIO
 
 buffer = StringIO()
@@ -9,4 +11,11 @@ c.perform()
 c.close()
 
 body = buffer.getvalue()
-print(body)
+
+separator = '={79}\s\n.*\n.*\n'
+expression = separator
+lines = re.split(expression, body)
+lines = lines[1:]
+lines = lines[:-1]
+
+print(lines[1])
