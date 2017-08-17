@@ -19,12 +19,16 @@ lines = re.split(expression, body)
 lines = lines[1:]
 lines = lines[:len(lines)]
 
-print(lines[-2:])
-
 client = MongoClient('localhost', 27017)
 db = client.test
 logs = db.police_logs
 
 for line in lines:
-    entry = {"raw":line}
-    logs.insert_one(entry)
+    pattern = re.compile("Type: (.*)\s")
+    match = pattern.match(line)
+    if match:
+        entry_type = match.group(0)
+        print(entry_type)
+    entry_location = re.findall("Location:(.*)\n$", line)
+    entry = {"raw":line, "type": entry_type, "location": entry_location}
+    #logs.insert_one(entry)
