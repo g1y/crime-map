@@ -17,10 +17,6 @@ separator = '={79}\s\n'
 expression = separator
 lines = re.split(expression, body)
 
-client = MongoClient('localhost', 27017)
-db = client.test
-logs = db.police_logs
-
 def parse_entry(line):
     entry = {'raw': line}
 
@@ -91,3 +87,15 @@ def combine_header_body(lines):
     return combined_lines
 
 combined = combine_header_body(lines)
+
+client = MongoClient('localhost', 27017)
+db = client.test
+logs = db.police_logs
+
+parsed = map(parse_entry, combined)
+for entry in parsed:
+    existing = logs.find_one(entry)
+    if not existing:
+        logs.insert(entry)
+    else:
+        print("skipping, already exists")
