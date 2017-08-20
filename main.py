@@ -89,7 +89,7 @@ def combine_header_body(lines):
 combined = combine_header_body(lines)
 
 client = MongoClient('localhost', 27017)
-db = client.test
+db = client.snoopy
 logs = db.police_logs
 
 parsed = map(parse_entry, combined)
