@@ -22,8 +22,13 @@ db = client.test
 logs = db.police_logs
 
 def parse_entry(line):
-    entry = {"raw":line}
+    entry = {'raw': line}
 
+    report_num_pattern = re.compile("([0-9]+)\s")
+    received_pattern = re.compile("Received:([0-9]{2}:[0-9]{2})\s")
+    dispatched_pattern = re.compile("Dispatched:([0-9]{2}:[0-9]{2})\s")
+    arrived_pattern = re.compile("Arrived:([0-9]{2}:[0-9]{2})\s")
+    cleared_pattern = re.compile("Cleared:([0-9]{2}:[0-9]{2})\s")
     type_pattern = re.compile("Type: (\S*)\s")
     location_pattern = re.compile("Location:(\S*)")
     address_pattern = re.compile("Addr: (.*),")
@@ -31,9 +36,24 @@ def parse_entry(line):
     responsible_officer_pattern = re.compile("Responsible Officer: (\S*, .)")
     call_comments_pattern = re.compile("CALL COMMENTS: (.*)\n")
 
-    match = type_pattern.match(line)
+    match = report_num_pattern.match(line)
     if match:
-        entry["type"] = match.group(1)
+        entry["report_number"] = match.group(1)
+    search = received_pattern.search(line)
+    if search:
+        entry["received"] = search.group(1)
+    search = dispatched_pattern.search(line)
+    if search:
+        entry["received"] = search.group(1)
+    search = arrived_pattern.search(line)
+    if search:
+        entry["arrived"] = search.group(1)
+    search = cleared_pattern.search(line)
+    if search:
+        entry["cleared"] = search.group(1)
+    search = type_pattern.search(line)
+    if search:
+        entry["type"] = search.group(1)
     search = location_pattern.search(line)
     if search:
         entry["location"] = search.group(1)
