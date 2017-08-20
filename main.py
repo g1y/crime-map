@@ -13,12 +13,9 @@ c.close()
 
 body = buffer.getvalue()
 
-separator = '={79}\n'
+separator = '={79}\s\n'
 expression = separator
 lines = re.split(expression, body)
-print(lines)
-#lines = lines[1:]
-#lines = lines[:len(lines)]
 
 client = MongoClient('localhost', 27017)
 db = client.test
@@ -66,10 +63,11 @@ def combine_header_body(lines):
         body_match = body_pattern.match(line)
         header_match = header_pattern.match(line)
         if body_match:
-            current_entry = line
-        elif header_match:
             current_entry = current_entry + line
+            combined_lines.append(current_entry)
+        elif header_match:
+            current_entry = line
 
     return combined_lines
 
-body = parse_entry(line)
+combined = combine_header_body(lines)
