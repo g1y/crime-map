@@ -24,9 +24,9 @@ def signup():
     if not signup_db.find_one(signup_entry):
         signup_db.insert_one(signup_entry)
 
-    send_confirmation_email()
+    send_confirmation_email(email)
 
-    return "signup complete!"
+    return render_template('confirmation.html', email=email)
 
 @app.route('/')
 def main_page():
