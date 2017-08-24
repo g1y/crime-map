@@ -31,6 +31,7 @@ def parse_entry(line):
     clearance_code_pattern = re.compile("Clearance Code: (\S*)\s")
     responsible_officer_pattern = re.compile("Responsible Officer: (\S*, .)")
     call_comments_pattern = re.compile("CALL COMMENTS: (.*)\n")
+    description_pattern = re.compile("Des:(.*)incid")
 
     match = report_num_pattern.match(line)
     if match:
@@ -65,6 +66,9 @@ def parse_entry(line):
     search = call_comments_pattern.search(line)
     if search:
         entry["call_comments"] = search.group(1)
+    search = description_pattern.search(line)
+    if search:
+        entry["description"] = search.group(1)
 
     return entry
 
