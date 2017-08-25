@@ -33,9 +33,12 @@ celery = make_celery(app)
 
 @celery.task()
 def send_confirmation_email(email):
+    token = create_confirmation_token(email)
     mail = Mail()
     mail.init_app(app)
-    msg = Message("Confirm!", sender="noreply@mooreguy.com", recipients=email)
+    link = 'mooreguy.com/confirm?email=' + email + '&token=' + token
+    anchor = '<a href="' + link + '">Confirm here!</a>'
+    msg = Message(anchor, sender="noreply@mooreguy.com", recipients=email)
     mail.send(msg)
     return
 
@@ -53,6 +56,18 @@ def signup():
 
     return render_template('confirmation.html', email=email)
 
+@app.route('/confirm', methods=['GET'])
+def confirm():
+    email = request.get('email')
+    token = request.get('token')
+
+    signup_db = get_db()
+    if signup_db.find_one({'email': email, 'token': token}):
+        signup_db.update({'email': email}, {'$set': {'confirmed': True}})
+        return "You're confirmed!"
+    else:
+        return "Invalid confirmation link"
+
 @app.route('/')
 def main_page():
     return render_template('signup.html')
@@ -61,3 +76,10 @@ def get_db():
     client = MongoClient('localhost', 27017)
     db = client.snoopy
     return db.signups
+
+def create_confirmation_token(email):
+    token = urandom(20)
+    client = MongoClient('localhost', 27017)
+    signups = get_db()
+    signups.update({'email': email}, {'$set': {confirmation_token: token}}, upsert=False)
+    return token
