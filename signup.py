@@ -6,6 +6,9 @@ from celery import Celery
 
 from pymongo import MongoClient
 
+from flask_mail import Mail
+from flask_mail import Message
+
 def make_celery(app):
     celery = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],
         broker=app.config['CELERY_BROKER_URL'])
@@ -25,11 +28,15 @@ app.config.update(
     CELERY_RESULT_BACKEND='redis://localhost:6379'
 )
 
+
 celery = make_celery(app)
 
 @celery.task()
 def send_confirmation_email(email):
-    # need to implement email sending
+    mail = Mail()
+    mail.init_app(app)
+    msg = Message("Confirm!", sender="noreply@mooreguy.com", recipients=email)
+    mail.send(msg)
     return
 
 @app.route('/signup', methods=['POST'])
