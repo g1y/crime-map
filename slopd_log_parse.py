@@ -1,21 +1,12 @@
-import pycurl
 import re
-from pymongo import MongoClient
 
-from StringIO import StringIO
 
-buffer = StringIO()
-c = pycurl.Curl()
-c.setopt(c.URL, 'http://pdreport.slocity.org/policelog/rpcdsum.txt')
-c.setopt(c.WRITEDATA, buffer)
-c.perform()
-c.close()
-
-body = buffer.getvalue()
-
-separator = '={79}\s\n'
-expression = separator
-lines = re.split(expression, body)
+def parse_log(log_contents):
+	separator = '={79}\s\n'
+	expression = separator
+	lines = re.split(expression, body)
+	combined = combine_header_body(lines)
+	return map(parse_entry, combined)
 
 def parse_entry(line):
     entry = {'raw': line}
@@ -90,16 +81,3 @@ def combine_header_body(lines):
 
     return combined_lines
 
-combined = combine_header_body(lines)
-
-client = MongoClient('localhost', 27017)
-db = client.snoopy
-logs = db.police_logs
-
-parsed = map(parse_entry, combined)
-for entry in parsed:
-    existing = logs.find_one(entry)
-    if not existing:
-        logs.insert(entry)
-    else:
-        print("skipping, already exists")
