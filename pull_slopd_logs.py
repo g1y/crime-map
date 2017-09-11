@@ -1,8 +1,6 @@
 import pycurl
-import re
-from pymongo import MongoClient
-
 from StringIO import StringIO
+from pymongo import MongoClient
 
 buffer = StringIO()
 c = pycurl.Curl()

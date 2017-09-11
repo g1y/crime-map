@@ -1,6 +1,5 @@
 import re
 
-
 def parse_log(log_contents):
 	separator = '={79}\s\n'
 	expression = separator
@@ -80,4 +79,3 @@ def combine_header_body(lines):
             current_entry = line
 
     return combined_lines
-
