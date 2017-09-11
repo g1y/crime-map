@@ -17,10 +17,9 @@ missing_lookup = {'maps_geocode': {'$exists': False}, 'address': {'$exists': Tru
 log_entries = logs.find(missing_lookup)
 for key, entry in enumerate(log_entries):
 	print(entry[u'address'])
-	geocode_result = gmaps_client.geocode(entry[u'address'])
+	geocode_result = gmaps_client.geocode(entry[u'address'] + ", San Luis Obispo, California")
 	print(geocode_result)
 	if geocode_result:
-		log_entries[key].maps_lookup = geocode_result
 		print("going to update")
 		print(geocode_result)
-		logs.update({'_id': entry._id}, {'$set': {'maps_geocode': geocode_result}}, {'upsert': True})
+		logs.update({u'_id': entry[u'_id']}, {'$set': {'maps_geocode': geocode_result}}, upsert=True)
