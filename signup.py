@@ -9,6 +9,7 @@ from pymongo import MongoClient
 from flask_mail import Mail
 from flask_mail import Message
 
+
 def make_celery(app):
     celery = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],
         broker=app.config['CELERY_BROKER_URL'])
@@ -71,6 +72,10 @@ def confirm():
 @app.route('/')
 def main_page():
     return render_template('signup.html')
+
+@app.route('/map')
+def main_page():
+    return render_template('map.html')
 
 def get_db():
     client = MongoClient('localhost', 27017)
