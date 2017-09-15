@@ -9,7 +9,6 @@ def parse_log(log_contents):
 	return map(parse_entry, combined)
 
 def parse_entry(line):
-	print("here")
 	entry = {'raw': line}
 
 	report_num_pattern = re.compile("([0-9]+)\s")
