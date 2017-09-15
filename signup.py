@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import send_file
 
 from celery import Celery
 
@@ -8,6 +9,9 @@ from pymongo import MongoClient
 
 from flask_mail import Mail
 from flask_mail import Message
+
+import json
+from bson import json_util
 
 def make_celery(app):
     celery = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],
@@ -73,13 +77,31 @@ def main_page():
     return render_template('signup.html')
 
 @app.route('/map')
-def main_page():
+def map():
     return render_template('map.html')
 
+@app.route('/entries')
+def entries():
+	db = get_logs_db()
+	logs = list(db.find())
+	return json.dumps(logs, default=json_util.default)
+	return "hello world"
+
+@app.route('/js/bundle.js')
+def send_js():
+	return send_file('dist/bundle.js')
+
 def get_db():
-    client = MongoClient('localhost', 27017)
-    db = client.snoopy
-    return db.signups
+		client = MongoClient('localhost', 27017)
+		db = client.snoopy
+		logs = db.police_logs
+		return logs
+
+def get_logs_db():
+		client = MongoClient('localhost', 27017)
+		db = client.snoopy
+		logs = db.police_logs
+		return logs
 
 def create_confirmation_token(email):
     token = urandom(20)
@@ -87,3 +109,4 @@ def create_confirmation_token(email):
     signups = get_db()
     signups.update({'email': email}, {'$set': {confirmation_token: token}}, upsert=False)
     return token
+
