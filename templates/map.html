@@ -2,15 +2,34 @@
 <html>
   <head>
     <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
+		body, html, #map {
+			height: 100%;
+        	width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav {
+			display: flex;
+			justify-content: center;
+		}
+
+		h1 {
+			margin: auto;
+			position: fixed;
+			z-index: 50;
+		}
+
+		#map {
+			position: relative;
+		}
     </style>
   </head>
   <body>
-    <h3>Police Activity</h3>
-    <div id="map"></div>
+	<nav>
+			<h1>Police Activity</h3>
+	</nav>
+	<div id="map"></div>
 	<script src="/js/bundle.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCToYBCdm8cAVxX4unsEgOunuKxhTOHnc0&callback=initMap">
