@@ -7,9 +7,12 @@ function addPins(map) {
 		responseJson.map(function(entry) {
 			if ("maps_geocode" in entry) {
 				loc = entry.maps_geocode[0].geometry.location
+				type = entry.type ? entry.type : "";
+				title = entry.call_comments ? type + ": " + entry.call_comments: "";
 				new google.maps.Marker({
 					position: loc,
 					map: map,
+					title: title,
 				});
 			}
 		});
@@ -19,7 +22,7 @@ function addPins(map) {
 function initMap() {
 		var uluru = {lat: 35.2827524, lng: -120.6596156};
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 4,
+			zoom: 10,
 			center: uluru,
 		});
 
