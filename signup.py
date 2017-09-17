@@ -94,7 +94,7 @@ def send_js():
 def get_db():
 		client = MongoClient('localhost', 27017)
 		db = client.snoopy
-		logs = db.police_logs
+		logs = db.signups
 		return logs
 
 def get_logs_db():
