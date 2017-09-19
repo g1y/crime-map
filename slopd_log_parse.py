@@ -1,5 +1,7 @@
 import re
 import pprint
+import datetime
+import time
 
 def parse_log(log_contents):
 	separator = '={79}\s\n'
@@ -11,23 +13,32 @@ def parse_log(log_contents):
 def parse_entry(line):
 	entry = {'raw': line}
 
-	report_num_pattern = re.compile("([0-9]+)\s")
-	received_pattern = re.compile("Received:([0-9]{2}:[0-9]{2})\s")
-	dispatched_pattern = re.compile("Dispatched:([0-9]{2}:[0-9]{2})\s")
-	arrived_pattern = re.compile("Arrived:([0-9]{2}:[0-9]{2})\s")
-	cleared_pattern = re.compile("Cleared:([0-9]{2}:[0-9]{2})\s")
-	type_pattern = re.compile("Type: (\S*)\n")
-	location_pattern = re.compile("Location:(\S*)")
-	address_pattern = re.compile("Addr: (.*)Clearance Code")
-	grid_pattern = re.compile("; GRID (.*)(,|;)")
-	clearance_code_pattern = re.compile("Clearance Code: (\S*)\s")
+	report_num_pattern          = re.compile("([0-9]+)\s")
+	date_pattern                = re.compile("[0-9]+\s([0-9\/]+)\s")
+	received_pattern            = re.compile("Received:([0-9]{2}:[0-9]{2})\s")
+	dispatched_pattern          = re.compile("Dispatched:([0-9]{2}:[0-9]{2})\s")
+	arrived_pattern             = re.compile("Arrived:([0-9]{2}:[0-9]{2})\s")
+	cleared_pattern             = re.compile("Cleared:([0-9]{2}:[0-9]{2})\s")
+	type_pattern                = re.compile("Type: (\S*)\n")
+	location_pattern            = re.compile("Location:(\S*)")
+	address_pattern             = re.compile("Addr: (.*)Clearance Code")
+	grid_pattern                = re.compile("; GRID (.*)(,|;)")
+	clearance_code_pattern      = re.compile("Clearance Code: (\S*)\s")
 	responsible_officer_pattern = re.compile("Responsible Officer: (\S*, .)")
-	call_comments_pattern = re.compile("CALL COMMENTS: (.*)\n")
-	description_pattern = re.compile("Des:(.*)incid")
+	call_comments_pattern       = re.compile("CALL COMMENTS: (.*)\n")
+	description_pattern         = re.compile("Des:(.*)incid")
 
 	match = report_num_pattern.match(line)
 	if match:
-		 entry["report_number"] = match.group(1)
+		entry["report_number"] = match.group(1)
+	match = date_pattern.match(line)
+	if match:
+		dateString = match.group(1)
+		entry["date"] = dateString
+		split = re.split("\/", dateString)
+		date = datetime.datetime(int(split[2]), int(split[0]), int(split[1]))
+		timestamp = time.mktime(date.timetuple())
+		entry["timestamp"] = timestamp
 	search = received_pattern.search(line)
 	if search:
 		entry["received"] = search.group(1)

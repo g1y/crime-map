@@ -12,6 +12,7 @@ function addPins(map) {
 				var infoWindow = new google.maps.InfoWindow({
 					content: title,
 				});
+
 				var marker = new google.maps.Marker({
 					position: loc,
 					map: map,
