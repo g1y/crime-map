@@ -1,4 +1,14 @@
-console.log("hello");
+var _paq = _paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+	var u="//g1y.innocraft.cloud/";
+	_paq.push(['setTrackerUrl', u+'piwik.php']);
+	_paq.push(['setSiteId', '1']);
+	var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+})();
 
 function addPins(map) {
 	fetch('/entries').then(function(response) {
