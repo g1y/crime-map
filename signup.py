@@ -61,9 +61,10 @@ def signup():
     if not signup_db.find_one(signup_entry):
         signup_db.insert_one(signup_entry)
 
-    send_confirmation_email(email)
+    #send_confirmation_email(email)
 
-    return render_template('confirmation.html', email=email)
+    #return render_template('confirmation.html', email=email)
+	return "feature coming soon"
 
 @app.route('/confirm', methods=['GET'])
 def confirm():
@@ -109,9 +110,9 @@ def get_logs_db():
 		return logs
 
 def create_confirmation_token(email):
-    token = urandom(20)
+    token = os.urandom(20)
     client = MongoClient('localhost', 27017)
     signups = get_db()
-    signups.update({'email': email}, {'$set': {confirmation_token: token}}, upsert=False)
+    signups.update({'email': email}, {'$set': {'confirmation_token': Binary(token)}}, upsert=False)
     return token
 
