@@ -12,6 +12,11 @@ from flask_mail import Message
 
 import json
 from bson import json_util
+from bson.binary import Binary
+
+import os
+
+import time
 
 def make_celery(app):
     celery = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],
@@ -82,10 +87,10 @@ def map():
 
 @app.route('/entries')
 def entries():
+	cutoff = time.time() - (4 * 86400)
 	db = get_logs_db()
-	logs = list(db.find())
+	logs = list(db.find({'timestamp': {'$gt': cutoff}}))
 	return json.dumps(logs, default=json_util.default)
-	return "hello world"
 
 @app.route('/js/bundle.js')
 def send_js():
