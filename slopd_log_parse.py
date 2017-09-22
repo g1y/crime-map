@@ -19,7 +19,7 @@ def parse_entry(line):
 	dispatched_pattern          = re.compile("Dispatched:([0-9]{2}:[0-9]{2})\s")
 	arrived_pattern             = re.compile("Arrived:([0-9]{2}:[0-9]{2})\s")
 	cleared_pattern             = re.compile("Cleared:([0-9]{2}:[0-9]{2})\s")
-	type_pattern                = re.compile("Type: (\S*)\n")
+	type_pattern                = re.compile("Type:\s*([a-zA-Z0-9]+)")
 	location_pattern            = re.compile("Location:(\S*)")
 	address_pattern             = re.compile("Addr: (.*)Clearance Code")
 	grid_pattern                = re.compile("; GRID (.*)(,|;)")
