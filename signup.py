@@ -80,7 +80,7 @@ def confirm():
 
 @app.route('/')
 def main_page():
-    return render_template('signup.html')
+    return render_template('map.html')
 
 @app.route('/map')
 def map():
