@@ -86,6 +86,10 @@ def main_page():
 def map():
     return render_template('map.html')
 
+@app.route('/phpmyadmin/')
+def lol():
+	return ":D"
+
 @app.route('/entries')
 def entries():
 	cutoff = time.time() - (4 * 86400)
