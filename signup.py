@@ -97,6 +97,13 @@ def entries():
 	logs = list(db.find({'timestamp': {'$gt': cutoff}}))
 	return json.dumps(logs, default=json_util.default)
 
+@app.route('/log')
+def log():
+	requestedDate = request.args['date']
+	db = get_logs_db()
+	logs = list(db.find({'date': requestedDate}))
+	return json.dumps(logs, default=json_util.default)
+
 @app.route('/js/bundle.js')
 def send_js():
 	return send_file('dist/bundle.js')
