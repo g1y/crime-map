@@ -1,0 +1,20 @@
+# Flask
+*.pyc
+
+# app specific
+maps_key.txt
+
+# virtualenv stuff
+bin/
+dist/
+include/
+lib/
+local/
+share/
+
+# node
+node_modules/
+
+# editor swaps
+*.swp
+*.sw*
