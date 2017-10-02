@@ -1,3 +1,7 @@
+import ReactDOM from  'react-dom';
+import React from 'react';
+import Box from './date-pick.js';
+
 function addPins(map) {
 	fetch('/entries').then(function(response) {
 		return response.json();
@@ -36,3 +40,5 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+ReactDOM.render(<Box />, document.getElementById("asdf"));
