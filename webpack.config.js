@@ -30,6 +30,13 @@ module.exports = {
 				test: /\.js$/,
 				loader: 'babel-loader',
 				options: {'presets': ["env", "react"]},
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					'css-loader',
+				],
 			}
 		]
 	}
