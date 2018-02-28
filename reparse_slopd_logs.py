@@ -15,4 +15,4 @@ logs = db.police_logs
 lookup = {}
 entries = map(reparse_entry, logs.find(lookup))
 for entry in entries:
-	existing = logs.update({'_id': entry['_id']}, {'$set': {'address': entry['address']}})
+	existing = logs.update({'_id': entry['_id']}, {'$set': {'type': entry['type']}})
