@@ -7,7 +7,7 @@ key_file = open('/root/snoopy/maps_key.txt')
 maps_key = re.sub('\n', '', key_file.readline())
 assert maps_key, 'Maps API key required to run!'
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb', 27017)
 db = client.snoopy
 logs = db.police_logs
 

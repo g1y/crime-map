@@ -5,13 +5,14 @@ services:
     ports:
      - "9000:80"
     links:
-      - mongodb
+      - "mongodb"
     depends_on:
-      - mongodb
+      - "mongodb"
   mongodb:
     image: "mongo:3.0"
     container_name: "mongodb"
     ports:
       - "27017:27017"
+
     volumes:
       - /mnt/crime-map/mongodb:/data/db

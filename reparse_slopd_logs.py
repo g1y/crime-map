@@ -8,7 +8,7 @@ def reparse_entry(existing_entry):
 	reparsed['_id'] = existing_entry['_id']
 	return reparsed
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb', 27017)
 db = client.snoopy
 logs = db.police_logs
 

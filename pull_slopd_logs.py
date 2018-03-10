@@ -14,7 +14,7 @@ c.close()
 body = buffer.getvalue().decode('iso-8859-1')
 parsed = slopd_log_parse.parse_log(body)
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb', 27017)
 db = client.snoopy
 logs = db.police_logs
 

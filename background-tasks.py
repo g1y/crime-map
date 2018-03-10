@@ -33,7 +33,7 @@ def send_confirmation_email(email):
 
 def create_confirmation_token(email):
     token = os.urandom(20)
-    client = MongoClient('localhost', 27017)
+    client = MongoClient('mongodb', 27017)
     signups = get_db()
     signups.update({'email': email}, {'$set': {'confirmation_token': Binary(token)}}, upsert=False)
     return token

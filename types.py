@@ -18,7 +18,7 @@ def create_tdm(entries):
 	return tdm
 
 def get_logs_db():
-	client = MongoClient('localhost', 27017)
+	client = MongoClient('mongodb', 27017)
 	db = client.snoopy
 	logs = db.police_logs
 	return logs
