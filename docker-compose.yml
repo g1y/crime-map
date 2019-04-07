@@ -15,4 +15,4 @@ services:
       - "27017:27017"
 
     volumes:
-      - /mnt/crime-map/mongodb:/data/db
+      - ./mongodb:/data/db

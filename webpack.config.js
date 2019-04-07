@@ -29,7 +29,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				options: {'presets': ["env", "react"]},
+				options: {'presets': ["@babel/preset-env", "@babel/preset-react"]},
 			},
 			{
 				test: /\.css$/,
