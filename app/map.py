@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template('map.html')
+    return render_template('map2.html')
 
 @app.route('/entries')
 def entries():
