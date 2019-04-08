@@ -2,4 +2,6 @@ version: '2'
 services:
   web:
     volumes:
+      - ./app:/usr/share/crime-map/
+      - ./templates:/usr/share/crime-map/templates
       - ./dist:/usr/share/crime-map/dist
