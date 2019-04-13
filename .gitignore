@@ -21,3 +21,7 @@ node_modules/
 
 # Visual Studio Code
 .vscode/
+
+# MapKitJS
+AuthKey.p8
+app/AuthKey.p8

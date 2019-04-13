@@ -9,6 +9,7 @@ from bson.binary import Binary
 
 from pymongo import MongoClient
 
+import jwt
 import time
 
 app = Flask(__name__)
@@ -34,6 +35,30 @@ def log():
 @app.route('/js/bundle.js')
 def send_js():
 	return send_file('dist/bundle.js')
+
+@app.route('/services/jwt')
+def sign_jwt():
+	# Team ID
+	ISSUER_ID = "C52AZ3BA5P"
+	KEY_ID = "44ZR4U8G69"
+	f = open('./AuthKey.p8', 'r')
+	key = f.read()
+	f.close()
+
+	jwt_headers = {
+		'alg': "ES256",
+		'kid': KEY_ID,
+		'typ': "JWT"
+	}
+
+	claims = {
+		'iss': ISSUER_ID,
+		'iat': time.time(),
+		'exp': time.time() + 20 * 60,
+	}
+
+	return jwt.encode(claims, key=key, algorithm="ES256", headers=jwt_headers)
+
 
 def get_db():
 		client = MongoClient('mongodb', 27017)

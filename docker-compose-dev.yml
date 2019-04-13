@@ -3,5 +3,6 @@ services:
   web:
     volumes:
       - ./app:/usr/share/crime-map/
+      - ./AuthKey.p8:/usr/share/crime-map/AuthKey.p8
       - ./templates:/usr/share/crime-map/templates
       - ./dist:/usr/share/crime-map/dist
