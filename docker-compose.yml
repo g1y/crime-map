@@ -8,6 +8,12 @@ services:
       - "mongodb"
     depends_on:
       - "mongodb"
+  log-scraper:
+    build:
+      context: log-scraper
+  geocoder:
+    build:
+      context: geocoder
   mongodb:
     image: "mongo:3.0"
     container_name: "mongodb"
