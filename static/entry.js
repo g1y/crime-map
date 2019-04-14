@@ -29,6 +29,30 @@ function addPins(map) {
 	});
 }
 
+function addMapkitMarkers(map) {
+	fetch('/entries').then(function(response) {
+		return response.json();
+	}).then(function(responseJson) {
+		responseJson.map(function(entry) {
+			if ("maps_geocode" in entry) {
+				var loc = entry.maps_geocode[0].geometry.location
+				var title = "type" in entry ? entry.type : "";
+				var subtitle = "call_comments" in entry ? entry.call_comments: "";
+				
+
+				var crimeCoordinate = new mapkit.Coordinate(loc.lat, loc.lng);
+
+				var crime = new mapkit.MarkerAnnotation(crimeCoordinate, {
+					title: title,
+					subtitle: subtitle
+				})
+
+				map.addAnnotation(crime);
+			}
+		});
+	});
+}
+
 function initMapkitJS() {
 	mapkit.init({
 		authorizationCallback: function(done) {
@@ -49,14 +73,7 @@ function initMapkitJS() {
 	var map = new mapkit.Map("map");
 	map.region = SLO;
 
-	var crimeCoordinate = new mapkit.Coordinate(35.2827524, -120.6596156);
-
-	var crime = new mapkit.MarkerAnnotation(crimeCoordinate, {
-		title: "BIG CRIME",
-		subtitle: "This was a pretty big crime"
-	})
-
-	map.addAnnotation(crime);
+	addMapkitMarkers(map);
 }
 
 function initMap() {
