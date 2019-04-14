@@ -6,3 +6,8 @@ services:
       - ./AuthKey.p8:/usr/share/crime-map/AuthKey.p8
       - ./templates:/usr/share/crime-map/templates
       - ./dist:/usr/share/crime-map/dist
+  webpack:
+    image: node
+    volumes:
+      - ./:/usr/src/app
+    command: bash -c "cd usr/src/app && npm install --no-bin-links && npx webpack --config webpack.config.js -w" 

@@ -29,6 +29,36 @@ function addPins(map) {
 	});
 }
 
+function initMapkitJS() {
+	mapkit.init({
+		authorizationCallback: function(done) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/services/jwt");
+			xhr.addEventListener("load", function() {
+				done(this.responseText);
+			});
+			xhr.send();
+		}
+	});
+	
+	var SLO = new mapkit.CoordinateRegion(
+		new mapkit.Coordinate(35.2827524, -120.6596156),
+		new mapkit.CoordinateSpan(0.167647972, 0.354985255)
+	);
+
+	var map = new mapkit.Map("map");
+	map.region = SLO;
+
+	var crimeCoordinate = new mapkit.Coordinate(35.2827524, -120.6596156);
+
+	var crime = new mapkit.MarkerAnnotation(crimeCoordinate, {
+		title: "BIG CRIME",
+		subtitle: "This was a pretty big crime"
+	})
+
+	map.addAnnotation(crime);
+}
+
 function initMap() {
 		var uluru = {lat: 35.2827524, lng: -120.6596156};
 		var map = new google.maps.Map(document.getElementById('map'), {
@@ -39,6 +69,8 @@ function initMap() {
 		addPins(map);
 }
 
-window.initMap = initMap;
+//window.initMap = initMap;
 
-ReactDOM.render(<Box />, document.getElementById("asdf"));
+//ReactDOM.render(<Box />, document.getElementById("asdf"));
+
+initMapkitJS();
