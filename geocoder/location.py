@@ -3,11 +3,11 @@ from googlemaps import googlemaps
 
 import re
 
-key_file = open('/root/snoopy/maps_key.txt')
+key_file = open('/usr/share/geocoder/maps_key.txt')
 maps_key = re.sub('\n', '', key_file.readline())
 assert maps_key, 'Maps API key required to run!'
 
-client = MongoClient('mongodb', 27017)
+client = MongoClient('mongodb')
 db = client.snoopy
 logs = db.police_logs
 
@@ -23,3 +23,5 @@ for key, entry in enumerate(log_entries):
 		print("going to update")
 		print(geocode_result)
 		logs.update({u'_id': entry[u'_id']}, {'$set': {'maps_geocode': geocode_result}}, upsert=True)
+
+print("finished geocoding")
