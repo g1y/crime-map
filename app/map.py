@@ -20,7 +20,7 @@ def main_page():
 
 @app.route('/entries')
 def entries():
-	cutoff = time.time() - (4 * 86400)
+	cutoff = time.time() - (15 * 86400)
 	db = get_logs_db()
 	logs = list(db.find({'timestamp': {'$gt': cutoff}}))
 	return json.dumps(logs, default=json_util.default)
@@ -35,6 +35,10 @@ def log():
 @app.route('/js/bundle.js')
 def send_js():
 	return send_file('dist/bundle.js')
+
+@app.route('/js/bundle.js.map')
+def send_js_source_map():
+	return send_file('dist/bundle.js.map')
 
 @app.route('/services/jwt')
 def sign_jwt():

@@ -1,6 +1,6 @@
 import ReactDOM from  'react-dom';
 import React from 'react';
-//import Box from './date-pick.js';
+import Button from 'react-bootstrap/Button';
 
 function addPins(map) {
 	fetch('/entries').then(function(response) {
@@ -37,9 +37,9 @@ function addMapkitMarkers(map) {
 			if ("maps_geocode" in entry) {
 				var loc = entry.maps_geocode[0].geometry.location
 				var title = "type" in entry ? entry.type : "";
+				title = title.substring(0, 1).toUpperCase() + title.substring(1).toLowerCase();
 				var subtitle = "call_comments" in entry ? entry.call_comments: "";
 				
-
 				var crimeCoordinate = new mapkit.Coordinate(loc.lat, loc.lng);
 
 				var crime = new mapkit.MarkerAnnotation(crimeCoordinate, {
@@ -88,6 +88,7 @@ function initMap() {
 
 //window.initMap = initMap;
 
-//ReactDOM.render(<Box />, document.getElementById("asdf"));
-
 initMapkitJS();
+
+var button = <Button variant="primary">Report Info</Button>;
+ReactDOM.render(button, document.getElementById("inner-map"));

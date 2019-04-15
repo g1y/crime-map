@@ -25,3 +25,4 @@ node_modules/
 # MapKitJS
 AuthKey.p8
 app/AuthKey.p8
+geocoder/maps_key.txt
