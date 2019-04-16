@@ -32,6 +32,13 @@ def log():
 	logs = list(db.find({'date': requestedDate}))
 	return json.dumps(logs, default=json_util.default)
 
+@app.route('/search')
+def search():
+	title = request.args['title']
+	db = get_logs_db()
+	logs = list(db.find({'type': title}))
+	return json.dumps(logs, default=json_util.default)
+
 @app.route('/js/bundle.js')
 def send_js():
 	return send_file('dist/bundle.js')
