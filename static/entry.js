@@ -2,6 +2,8 @@ import ReactDOM from  'react-dom';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
+import './report-info.css';
+
 function addPins(map) {
 	fetch('/entries').then(function(response) {
 		return response.json();
@@ -45,9 +47,13 @@ function addMapkitMarkers(map) {
 				var crime = new mapkit.MarkerAnnotation(crimeCoordinate, {
 					title: title,
 					subtitle: subtitle
-				})
+				});
 
 				map.addAnnotation(crime);
+				crime.addEventListener('select', (event) => {
+					var button = <Button variant="primary" id="report-info">Report Info</Button>;
+					ReactDOM.render(button, event.target.element);
+				}, crime.element);
 			}
 		});
 	});
@@ -89,6 +95,3 @@ function initMap() {
 //window.initMap = initMap;
 
 initMapkitJS();
-
-var button = <Button variant="primary">Report Info</Button>;
-ReactDOM.render(button, document.getElementById("inner-map"));
