@@ -1,6 +1,7 @@
 import ReactDOM from  'react-dom';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 import './report-info.css';
 
@@ -59,6 +60,29 @@ function addMapkitMarkers(map) {
 	});
 }
 
+function addTable() {
+	fetch('/categories').then(function(response) {
+		if (response.status != '200') {
+			var error = "There was an issue with retrieving table data";
+			console.error(error, response);
+			throw error
+		}
+		return response.json();
+	}).then(function(responseJson) { 
+		var table = <Table Type of event>
+			<thead>
+				<tr>
+					<th>Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				{responseJson.map((type) => <tr><td>{type}</td></tr>)}
+			</tbody>
+		</Table>;
+		ReactDOM.render(table, document.getElementById("header"));
+	});
+}
+
 function initMapkitJS() {
 	mapkit.init({
 		authorizationCallback: function(done) {
@@ -95,3 +119,4 @@ function initMap() {
 //window.initMap = initMap;
 
 initMapkitJS();
+addTable();

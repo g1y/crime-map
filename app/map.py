@@ -32,6 +32,12 @@ def log():
 	logs = list(db.find({'date': requestedDate}))
 	return json.dumps(logs, default=json_util.default)
 
+@app.route('/categories')
+def categories():
+	db = get_logs_db()
+	logs = list(db.distinct('type', {}))
+	return json.dumps(logs, default=json_util.default)
+
 @app.route('/search')
 def search():
 	title = request.args['title']
