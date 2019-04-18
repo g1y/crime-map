@@ -52,7 +52,7 @@ function addMapkitMarkers(map) {
 				map.addAnnotation(crime);
 				crime.addEventListener('select', (event) => {
 					var button = <Button variant="primary" id="report-info">Report Info</Button>;
-					ReactDOM.render(button, event.target.element);
+					//ReactDOM.render(button, event.target.element);
 				}, crime.element);
 			}
 		});
