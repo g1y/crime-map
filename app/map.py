@@ -20,10 +20,34 @@ def main_page():
 
 @app.route('/entries')
 def entries():
-	cutoff = time.time() - (15 * 86400)
+	days_string = request.args['days']
+	print(days_string)
+	try:
+		days = int(days_string)
+	except:
+		return "Invalid days"
+	
+	cutoff = time.time() - (days * 86400)
+	print(cutoff)
+
 	db = get_logs_db()
 	logs = list(db.find({'timestamp': {'$gt': cutoff}}))
+
 	return json.dumps(logs, default=json_util.default)
+
+@app.route('/dates_with_entries')
+def dates_with_entries():
+	dates_with_entries = dict() 
+	db = get_logs_db()
+	end_of_today = (time.time() - (time.time() % 86400)) + 86400
+	previous_days = [end_of_today - (x * 86400) for x in range(1,8)]
+	for previous_day_end in previous_days:
+		day_before_previous_day_end = previous_day_end - 86400
+		entry = list(db.findOne({'timestamp': {'$gt': day_before_previous_day_end, '$lt': previous_day_end}}).sort({'timestamp': 1}))
+		if False == entry:
+			entry = 0
+
+		dates_with_entries[time.strftime("%d-%m", previous_day_end)] = entry
 
 @app.route('/log')
 def log():

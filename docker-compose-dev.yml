@@ -10,4 +10,4 @@ services:
     image: node
     volumes:
       - ./:/usr/src/app
-    command: bash -c "cd usr/src/app && npm install --no-bin-links && npx webpack --config webpack.config.js -w" 
+    command: bash -c "cd usr/src/app && npm install --no-bin-links && npx webpack --config webpack.config.js --progress --watch" 
