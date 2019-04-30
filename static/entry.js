@@ -10,11 +10,13 @@ import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 
+import MapDatePicker from './map-date-picker.js';
+
 import './report-info.css';
 import './map.css';
 import './full-page.css';
 
-import './date-picker.js';
+import './filters.css'
 
 function addPins(map) {
 	fetch('/entries?days=1').then(function(response) {
@@ -100,7 +102,6 @@ function getDate() {
 }
 
 function headerBar() {
-	var DatePicker = require("react-bootstrap-date-picker");
 	var handleChange = function(value, formattedValue) {
 		this.setState({
 		  value: value, // ISO String, ex: "2016-11-19T12:00:00.000Z"
@@ -108,7 +109,6 @@ function headerBar() {
 		});
 	};
 	var dateSelectors = <ButtonToolbar aria-label="Toolbar with button groups">
-		<MapDatePicker id="example-datepicker" />
 		<ButtonGroup className="mr-sm-2" aria-label="First group">
 			<Button>1</Button>
 			<Button>2</Button>
@@ -133,6 +133,10 @@ function headerBar() {
 			<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
 			<NavDropdown.Divider />
 			<NavDropdown.Item href="#action/3.4">{dateSelectors}</NavDropdown.Item>
+			<NavDropdown.Divider />
+			<MapDatePicker className="map-date-picker" id="example-datepicker" />
+			<NavDropdown.Divider />
+			<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
 		</NavDropdown>
 		<Form inline>
 		<FormControl type="text" placeholder="Search" className="mr-sm-2" />
