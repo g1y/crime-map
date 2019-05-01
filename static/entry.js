@@ -16,8 +16,6 @@ import './report-info.css';
 import './map.css';
 import './full-page.css';
 
-import './filters.css'
-
 function addPins(map) {
 	fetch('/entries?days=1').then(function(response) {
 		return response.json();
@@ -110,10 +108,9 @@ function headerBar() {
 	};
 	var dateSelectors = <ButtonToolbar aria-label="Toolbar with button groups">
 		<ButtonGroup className="mr-sm-2" aria-label="First group">
-			<Button>1</Button>
-			<Button>2</Button>
-			<Button>3</Button>
-			<Button>4</Button>
+			<Button>Crime Types</Button>
+			<Button>Officer Name</Button>
+			<Button># Responders</Button>
 		</ButtonGroup>
 	</ButtonToolbar>;
 
@@ -126,17 +123,13 @@ function headerBar() {
 			<Nav.Link href="#link">My Reports</Nav.Link>
 		</Nav>
 		<NavDropdown title="Filters" id="basic-nav-dropdown" className="mr-sm-2">
-			<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-			<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+			<NavDropdown.Item href="#action/3.4">Heatmap</NavDropdown.Item>
 			<NavDropdown.Divider />
-			<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-			<NavDropdown.Divider />
+			<NavDropdown.Header href="#action/3.4">Color Coding</NavDropdown.Header>
 			<NavDropdown.Item href="#action/3.4">{dateSelectors}</NavDropdown.Item>
 			<NavDropdown.Divider />
+			<NavDropdown.Header>By Date</NavDropdown.Header>
 			<MapDatePicker className="map-date-picker" id="example-datepicker" />
-			<NavDropdown.Divider />
-			<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
 		</NavDropdown>
 		<Form inline>
 		<FormControl type="text" placeholder="Search" className="mr-sm-2" />
