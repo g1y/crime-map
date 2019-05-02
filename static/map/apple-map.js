@@ -1,3 +1,5 @@
+import Map from './map.js';
+
 export default class AppleMap extends Map {
     constructor() {
         super();

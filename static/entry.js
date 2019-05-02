@@ -9,12 +9,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
+import Row from 'react-bootstrap/Row';
 
 import MapDatePicker from './map-date-picker.js';
+import AppleMap from './map/apple-map.js';
 
 import './report-info.css';
 import './map.css';
 import './full-page.css';
+
 
 function addTable() {
 	fetch('/categories').then(function(response) {
@@ -46,13 +49,6 @@ function headerBar() {
 		  formattedValue: formattedValue // Formatted String, ex: "11/19/2016"
 		});
 	};
-	var dateSelectors = <ButtonToolbar aria-label="Toolbar with button groups">
-		<ButtonGroup className="mr-sm-2" aria-label="First group">
-			<Button>Crime Types</Button>
-			<Button>Officer Name</Button>
-			<Button># Responders</Button>
-		</ButtonGroup>
-	</ButtonToolbar>;
 
 	var nav = <Navbar bg="light" expand="lg">
 	<Navbar.Brand href="#home">Crime Map</Navbar.Brand>
@@ -62,14 +58,21 @@ function headerBar() {
 			<Nav.Link href="#home">Home</Nav.Link>
 			<Nav.Link href="#link">My Reports</Nav.Link>
 		</Nav>
-		<NavDropdown title="Filters" id="basic-nav-dropdown" className="mr-sm-2">
+		<NavDropdown title="Map Options" id="basic-nav-dropdown" className="mr-sm-1">
 			<NavDropdown.Item href="#action/3.4">Heatmap</NavDropdown.Item>
+
 			<NavDropdown.Divider />
 			<NavDropdown.Header href="#action/3.4">Color Coding</NavDropdown.Header>
-			<NavDropdown.Item href="#action/3.4">{dateSelectors}</NavDropdown.Item>
+			<NavDropdown.Item href="#action/3.4">Crime Types</NavDropdown.Item>
+			<NavDropdown.Item href="#action/3.4">Officer Name</NavDropdown.Item>
+			<NavDropdown.Item href="#action/3.4"># of Responders</NavDropdown.Item>
+
 			<NavDropdown.Divider />
 			<NavDropdown.Header>By Date</NavDropdown.Header>
 			<MapDatePicker className="map-date-picker" id="example-datepicker" />
+
+			<NavDropdown.Divider />
+			<NavDropdown.Item><Button variant="primary" block>Apply</Button></NavDropdown.Item>
 		</NavDropdown>
 		<Form inline>
 		<FormControl type="text" placeholder="Search" className="mr-sm-2" />
