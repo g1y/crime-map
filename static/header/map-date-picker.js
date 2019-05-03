@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 import DatePicker from 'react-date-picker';
 
-import FormGroup from 'react-bootstrap/FormGroup';
-import FormLabel from 'react-bootstrap/FormLabel';
-
 import './map-date-picker.css';
 
 export default class MapDatePicker extends Component {
