@@ -1,4 +1,5 @@
 const path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
 	entry: "./static/entry.js", // string | object | array
@@ -40,7 +41,14 @@ module.exports = {
 			}
 		]
 	},
-	devtool: 'source-map',
+	plugins: [
+		new webpack.DefinePlugin({
+			"process.env": {
+				NODE_ENV: JSON.stringify("development")
+			}
+		}),
+	],
+	devtool: 'eval-source-map',
 	watch: true,
 	watchOptions: {
 		aggregateTimeout: 300,
