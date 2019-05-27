@@ -1,4 +1,6 @@
 import Map from './map.js';
+import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 export default class AppleMap extends Map {
     constructor() {

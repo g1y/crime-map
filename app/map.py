@@ -18,6 +18,7 @@ app = Flask(__name__)
 def main_page():
     return render_template('map2.html')
 
+
 @app.route('/entries')
 def entries():
 	days_string = request.args['days']
@@ -26,7 +27,7 @@ def entries():
 		days = int(days_string)
 	except:
 		return "Invalid days"
-	
+
 	cutoff = time.time() - (days * 86400)
 	print(cutoff)
 
@@ -37,7 +38,7 @@ def entries():
 
 @app.route('/dates_with_entries')
 def dates_with_entries():
-	dates_with_entries = dict() 
+	dates_with_entries = dict()
 	db = get_logs_db()
 	end_of_today = (time.time() - (time.time() % 86400)) + 86400
 	previous_days = [end_of_today - (x * 86400) for x in range(1,8)]
