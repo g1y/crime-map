@@ -26,3 +26,6 @@ node_modules/
 AuthKey.p8
 app/AuthKey.p8
 geocoder/maps_key.txt
+
+# Project's mongodb storage for development
+mongodb/*
