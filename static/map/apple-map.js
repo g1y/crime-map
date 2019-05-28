@@ -1,41 +1,62 @@
 import Map from './map.js';
-import React from 'react';
+import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 
-export default class AppleMap extends Map {
-    constructor() {
-        super();
+import { createCrimeMarker } from '../crime-marker';
+
+export default class AppleMap extends Component {
+    constructor(props) {
+        super(props);
+        var self = this;
+        this.state = {
+            markers: [],
+            filters: {},
+            coloring: this.colorMarkersByType.bind(self),
+            map: this.initMap(),
+        };
+    }
+
+    assignMarkerGroupsColors(markerGroups) {
+        let colors = ["#ff3b30", "#ff9500", "#ffcc00", "#4cd964", "#5ac8fa", "#007aff", "#5856d6", "#ff2d55"];
+        var colorIndex = 0;
+        let assignColor = group => {
+            group.forEach(item => item.marker.color = colors[colorIndex]);
+            colorIndex++;
+            if (colorIndex == colors.length) {
+                colorIndex = 0;
+            }
+        }
+
+        Object.values(markerGroups).forEach(assignColor);
+    }
+
+    colorMarkersByType(markers) {
+        var typeGroups = markers.reduce(function(accumulator, current) {
+            if (current.entry.type in accumulator) {
+                accumulator[current.entry.type].push(current)
+            } else {
+                accumulator[current.entry.type] = [current]
+            }
+
+            return accumulator;
+        }, {});
+
+        this.assignMarkerGroupsColors(typeGroups);
     }
 
     addMarkers() {
-        let map = this.map;
+        let map = this.state.map;
+        let createMarkers = (responseJson) => {
+            var crimeMarkers = responseJson.map(createCrimeMarker).filter(i => !!i);
+            this.state.coloring(crimeMarkers);
+            this.state.markers = crimeMarkers;
 
+            map.addAnnotations(crimeMarkers.map(markers => markers.marker));
+        }
         fetch('/entries?days=10').then(function(response) {
             console.log(response);
             return response.json();
-        }).then(function(responseJson) {
-            responseJson.map(function(entry) {
-                if ("maps_geocode" in entry) {
-                    var loc = entry.maps_geocode[0].geometry.location
-                    var title = "type" in entry ? entry.type : "";
-                    title = title.substring(0, 1).toUpperCase() + title.substring(1).toLowerCase();
-                    var subtitle = "call_comments" in entry ? entry.call_comments: "";
-
-                    var crimeCoordinate = new mapkit.Coordinate(loc.lat, loc.lng);
-
-                    var crime = new mapkit.MarkerAnnotation(crimeCoordinate, {
-                        title: title,
-                        subtitle: subtitle
-                    });
-
-                    map.addAnnotation(crime);
-                    crime.addEventListener('select', (event) => {
-                        var button = <Button variant="primary" id="report-info">Report Info</Button>;
-                        //ReactDOM.render(button, event.target.element);
-                    }, crime.element);
-                }
-            });
-        });
+        }).then(createMarkers);
     }
 
     initMap() {
