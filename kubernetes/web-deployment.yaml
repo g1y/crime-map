@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crime-map-web-service
+spec:
+  selector:
+    app: crime-map-web
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 32000
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crime-map-web-deployment
+  labels:
+    app: crime-map-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crime-map-web
+  template:
+    metadata:
+      labels:
+        app: crime-map-web
+    spec:
+      containers:
+        - name: crime-map-web
+          image: crime-map_web
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          #restartPolicy: "Always"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"

@@ -1,0 +1,14 @@
+apiVersion:  batch/v1beta1
+kind: CronJob
+metadata:
+  name: crime-map-geocoder
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: geocoder
+            image: crime-map_geocoder
+          restartPolicy: OnFailure

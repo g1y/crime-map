@@ -1,0 +1,14 @@
+apiVersion:  apps/v1
+kind: CronJob
+metadata:
+  name: crime-map-log-scraper
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: log-scraper
+            image: crime-map_log-scraper
+          restartPolicy: OnFailure
