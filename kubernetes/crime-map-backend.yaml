@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crime-map-backend
+  namespace: crime-map
+spec:
+  selector:
+    app: crime-map-backend
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    name: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crime-map-backend
+  namespace: crime-map
+  labels:
+    app: crime-map-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crime-map-backend
+  template:
+    metadata:
+      labels:
+        app: crime-map-backend
+    spec:
+      containers:
+        - name: crime-map-backend
+          image: g1ymoore/crime-map:crime-map-backend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: apple-maps-credentials
+              mountPath: "/usr/share/crime-map/secrets"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      volumes:
+        - name: apple-maps-credentials
+          secret:
+            secretName: apple-maps-key
+            items:
+              - key: AuthKey_RZGS2V73AJ.p8
+                path: AuthKey.p8
+                mode: 511

@@ -11,4 +11,15 @@ spec:
           containers:
           - name: geocoder
             image: crime-map_geocoder
+            volumeMounts:
+              - name: google-maps
+                mountPath: "/usr/share/crime-map/secrets"
           restartPolicy: OnFailure
+          volumes:
+            - name: google-maps
+              secret:
+                secretName: google-maps
+                items:
+                  - key: api-key
+                    path: google-maps-key
+                    mode: 511
