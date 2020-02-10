@@ -3,14 +3,14 @@ kind: CronJob
 metadata:
   name: crime-map-geocoder
 spec:
-  schedule: "0 * * * *"
+  schedule: "0 0 * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
           - name: geocoder
-            image: crime-map_geocoder
+            image: g1ymoore/crime-map:geocoder
             volumeMounts:
               - name: google-maps
                 mountPath: "/usr/share/crime-map/secrets"
