@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//g1y.innocraft.cloud/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', '1']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+	</head>
+	<body>
+		<h1>Sign up to get notified about what is happening near you.</h1>
+		<form method="POST" action="/signup">
+			<label>email address</label>
+			<input name="email"></input>
+			<label>street</label>
+			<input name="street"></input>
+			<p>feature coming soon</p>
+			<p>If you can't wait, send hate mail to guy.moore.normal@gmail.com</p>
+			<!-- <button>submit</button> -->
+		</form>
+	</body>
+</html>
