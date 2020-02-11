@@ -24,13 +24,13 @@ class Geocoder:
         self.mongo_client.close()
         self.gmaps_client.session.close()
 
-    def create_mongo_client(self):
+    def police_logs(self):
         db = self.mongo_client.snoopy
         logs = db.police_logs
         return logs
 
     def add_coordinates_to_entry(self, geocode_result):
-        self.mongo_client.update({
+        self.police_logs().update({
             u'_id': geocode_result[u'_id']
         }, {
             '$set': {
@@ -48,8 +48,7 @@ class Geocoder:
 
     def geocode(self):
         missing_lookup = {'maps_geocode': {'$exists': False}, 'address': {'$exists': True}}
-        session = self.mongo_client
-        log_entries = session.find(missing_lookup)
+        log_entries = self.police_logs().find(missing_lookup)
         for _, entry in enumerate(log_entries):
             address = self.extract_address(entry)
             geocode_result = self.geocode_address(address)
@@ -58,5 +57,7 @@ class Geocoder:
                 print(geocode_result)
                 self.add_coordinates_to_entry(geocode_result)
 
-        session.close()
         print("finished geocoding")
+if __name__ == '__main__':
+    with Geocoder() as g:
+        g.geocode()

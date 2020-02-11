@@ -19,4 +19,15 @@ spec:
               limits:
                 memory: "128Mi"
                 cpu: "250"
+            volumeMounts:
+              - mountPath: "/usr/share/crime-map/secrets"
+                name: google-maps
           restartPolicy: OnFailure
+          volumes:
+            - name: google-maps
+              secret:
+                secretName: google-maps
+                items:
+                  - key: api-key
+                    path: google-maps-key
+                    mode: 511

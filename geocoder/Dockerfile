@@ -1,9 +1,13 @@
-FROM python:2.7-wheezy
+FROM python:3.8-buster
 
 WORKDIR /usr/share/geocoder/
 
+RUN apt-get update && apt-get install -y pipenv && apt-get clean
+
+COPY ./Pipfile* /usr/share/geocoder/
+
+RUN pipenv install
+
 COPY ./ /usr/share/geocoder/
 
-RUN pip --no-cache-dir install -r requirements.txt
-
-CMD bash -c "while python location.py; do sleep 2h; done"
+CMD ["pipenv", "run", "python", "location.py"]
