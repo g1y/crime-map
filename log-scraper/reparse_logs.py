@@ -1,3 +1,6 @@
+import sentry_sdk
+sentry_sdk.init("https://1ffbb5ff89b440338e3112310ac30750@sentry.io/1864498")
+
 import sys
 import pprint
 
@@ -14,12 +17,17 @@ def reparse_entry(existing_entry):
 	reparsed['_id'] = existing_entry['_id']
 	return reparsed
 
+def reparse_all(field):
+	lookup = {}
+	entries = map(reparse_entry, logs.find(lookup))
+	for entry in entries:
+		id = entry[u'_id']
+		val = entry[field]
+		print(f"Updating: {id}, field: {field}, val: {val}")
+		existing = logs.update_one({'_id': entry[u'_id']}, {'$set': {field: entry[field]}})
+
 client = MongoClient('mongodb', 27017)
 db = client.snoopy
 logs = db.police_logs
-
-lookup = {}
-entries = map(reparse_entry, logs.find(lookup))
 field = sys.argv[1]
-for entry in entries:
-	existing = logs.update({'_id': entry['_id']}, {'$set': {field: entry[field]}})
+reparse_all(field)

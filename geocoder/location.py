@@ -29,14 +29,14 @@ class Geocoder:
         logs = db.police_logs
         return logs
 
-    def add_coordinates_to_entry(self, geocode_result):
+    def add_coordinates_to_entry(self, entry, geocode_result):
         self.police_logs().update({
-            u'_id': geocode_result[u'_id']
+            u'_id': entry[u'_id']
         }, {
             '$set': {
                 'maps_geocode': geocode_result
             }
-        }, upsert=True).close()
+        }, upsert=True)
 
     # Everything in this police log is from San Luis Obispo
     def geocode_address(self, address):
@@ -55,7 +55,7 @@ class Geocoder:
             if geocode_result:
                 print("going to update " + address)
                 print(geocode_result)
-                self.add_coordinates_to_entry(geocode_result)
+                self.add_coordinates_to_entry(entry, geocode_result[0])
 
         print("finished geocoding")
 if __name__ == '__main__':

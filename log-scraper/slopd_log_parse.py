@@ -1,7 +1,6 @@
 import re
 import pprint
 import datetime
-import time
 
 def parse_log(log_contents):
 	separator = '={79}\s\n'
@@ -36,9 +35,11 @@ def parse_entry(line):
 	if match:
 		dateString = match.group(1)
 		entry["date"] = dateString
-		month, day, year = re.split(r"\/", dateString)
+		month, day, yearSmall = re.split(r"\/", dateString)
+		year = f"20{yearSmall}"
 		date = datetime.datetime(int(year), int(month), int(day))
-		timestamp = time.mktime(date.timetuple())
+		timestamp = date.timestamp()
+		print(f"dateString: {dateString}, month, day, year: {month}/{day}/{year}, date: {date}, timestamp created: {timestamp}, timestamp cast: {int(timestamp)}")
 		entry["timestamp"] = int(timestamp)
 
 	search = received_pattern.search(line)
