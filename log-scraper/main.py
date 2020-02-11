@@ -31,4 +31,4 @@ for entry in parsed:
 		logs.insert_one(entry)
 		totalInserted = totalInserted + 1
 
-print("finished scraping " +  str(totalInserted) + " logs")
+print("finished scraping " +  str(totalInserted) + "/" + len(parsed) + " logs")

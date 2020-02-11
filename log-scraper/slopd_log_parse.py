@@ -31,14 +31,16 @@ def parse_entry(line):
 	match = report_num_pattern.match(line)
 	if match:
 		entry["report_number"] = match.group(1)
+
 	match = date_pattern.match(line)
 	if match:
 		dateString = match.group(1)
 		entry["date"] = dateString
-		split = re.split("\/", dateString)
-		date = datetime.datetime(int(split[2]), int(split[0]), int(split[1]))
+		month, day, year = re.split(r"\/", dateString)
+		date = datetime.datetime(int(year), int(month), int(day))
 		timestamp = time.mktime(date.timetuple())
-		entry["timestamp"] = timestamp
+		entry["timestamp"] = int(timestamp)
+
 	search = received_pattern.search(line)
 	if search:
 		entry["received"] = search.group(1)
