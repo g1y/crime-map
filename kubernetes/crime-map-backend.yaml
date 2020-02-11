@@ -21,7 +21,7 @@ metadata:
   labels:
     app: crime-map-backend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: crime-map-backend
@@ -46,6 +46,17 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /entries?days=1
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20
       volumes:
         - name: apple-maps-credentials
           secret:

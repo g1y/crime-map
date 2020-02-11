@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: reparse-logs
+spec:
+  template:
+    spec:
+      containers:
+      - name: log-scraper
+        imagePullPolicy: Always
+        image: g1ymoore/crime-map:log-scraper
+        command: ["python", "reparse_logs.py", "timestamp"]
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "125m"
+          limits:
+            memory: "128Mi"
+            cpu: "250"
+      restartPolicy: Never
