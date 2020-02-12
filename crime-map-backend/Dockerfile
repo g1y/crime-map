@@ -7,4 +7,4 @@ RUN pip --no-cache-dir install -r requirements.txt
 
 COPY ./ /usr/share/crime-map/
 
-CMD uwsgi --py-autoreload 1 --socket 0.0.0.0:80 --protocol=http -w wsgi:app
+CMD uwsgi --py-autoreload 1 --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
