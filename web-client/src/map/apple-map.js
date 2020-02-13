@@ -16,14 +16,13 @@ export default class AppleMap extends Component {
             coloring: this.colorsBySeverity.bind(self),
         };
 
+        this.map = null;
         this.mapKitDiv = React.createRef();
     }
 
     componentDidMount() {
-        this.setState({
-            map: this.initMap(),
-        });
-        this.addMarkers()
+        this.initMap();
+        this.addMarkers();
     }
 
     render() {
@@ -125,14 +124,14 @@ export default class AppleMap extends Component {
     }
 
     addMarkers() {
-        let map = this.state.map;
         let createMarkers = (responseJson) => {
             const crimeMarkers = responseJson.map(createCrimeMarker).filter(i => !!i);
             this.state.coloring(crimeMarkers);
             this.state.markers = crimeMarkers;
 
-            map.addAnnotations(crimeMarkers.map(markers => markers.marker));
+            this.map.addAnnotations(crimeMarkers.map(markers => markers.marker));
         }
+
         fetch(__API_ROOT__  + '/entries?days=4').then(function(response) {
             console.log(response);
             return response.json();
@@ -143,13 +142,23 @@ export default class AppleMap extends Component {
         mapkit.init({
             authorizationCallback: function(done) {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "/services/jwt");
+                xhr.open("GET", __API_ROOT__ + "/services/jwt");
                 xhr.addEventListener("load", function() {
                     done(this.responseText);
                 });
                 xhr.send();
             }
         });
+
+        mapkit.addEventListener("error", function(event) {
+            switch (event.status) {
+            case "Unauthorized":
+                console.log("Map token unauthorized", event);
+                break;
+            }
+        });
+
+        console.log("init-map");
 
         var SLO = new mapkit.CoordinateRegion(
             new mapkit.Coordinate(35.2827524, -120.6596156),
@@ -159,6 +168,7 @@ export default class AppleMap extends Component {
         var map = new mapkit.Map(this.mapKitDiv.current);
         map.region = SLO;
 
+        this.map = map;
         return map;
     }
 }

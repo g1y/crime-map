@@ -82,6 +82,12 @@ spec:
           secret:
             secretName: apple-maps-key
             items:
-              - key: AuthKey_RZGS2V73AJ.p8
-                path: AuthKey.p8
+              - key: private-key
+                path: private-key
+                mode: 511
+              - key: issuer-id
+                path: issuer-id
+                mode: 511
+              - key: key-id
+                path: key-id
                 mode: 511

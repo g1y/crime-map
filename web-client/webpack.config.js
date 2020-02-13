@@ -41,9 +41,14 @@ module.exports = {
             }
         ]
     },
+
+    optimization: {
+        minimize: false
+    },
+
     plugins: [
         new webpack.DefinePlugin({
-            "__API_ROOT__": JSON.stringify(process.env.NODE_ENV == "development" ? "http://localhost:5000" : "http://crime-map-backend.g1y.io:5000")
+            "__API_ROOT__": JSON.stringify(process.env.NODE_ENV == "development" ? "http://localhost:5000" : "https://crime-map.g1y.io")
         }),
         new webpack.DefinePlugin({
             "process.env": {

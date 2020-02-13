@@ -56,8 +56,8 @@ spec:
     spec:
       containers:
         - name: crime-map-backend
-          image: g1ymoore/crime-map:crime-map-backend
-          imagePullPolicy: Always
+          image: g1ymoore/crime-map:crime-map-backend-dev
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
           volumeMounts:
@@ -70,6 +70,9 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          env:
+            - name: "FLASK_ENV"
+              value: "development"
           readinessProbe:
             httpGet:
               path: /entries?days=1
@@ -86,6 +89,12 @@ spec:
           secret:
             secretName: apple-maps-key
             items:
-              - key: AuthKey_RZGS2V73AJ.p8
-                path: AuthKey.p8
+              - key: private-key
+                path: private-key
+                mode: 511
+              - key: issuer-id
+                path: issuer-id
+                mode: 511
+              - key: key-id
+                path: key-id
                 mode: 511

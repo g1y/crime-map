@@ -11,105 +11,108 @@ from pymongo import MongoClient
 
 import jwt
 import time
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template('index.html')
+    if os.getenv("FLASK_ENV") == "development":
+        frontend_root = "http://localhost:8080"
+    else:
+        frontend_root = "https://crime-map.sfo2.cdn.digitaloceanspaces.com"
+
+    return render_template('index.html', frontend_root=frontend_root)
 
 
 @app.route('/entries')
 def entries():
-	days_string = request.args['days']
-	print(days_string)
-	try:
-		days = int(days_string)
-	except:
-		return "Invalid days"
+    days_string = request.args['days']
+    print(days_string)
+    try:
+        days = int(days_string)
+    except:
+        return "Invalid days"
 
-	cutoff = time.time() - (days * 86400)
-	print(cutoff)
+    cutoff = time.time() - (days * 86400)
+    print(cutoff)
 
-	db = get_logs_db()
-	logs = list(db.find({'timestamp': {'$gt': cutoff}}))
+    db = get_logs_db()
+    logs = list(db.find({'timestamp': {'$gt': cutoff}}))
 
-	return json.dumps(logs, default=json_util.default)
+    return json.dumps(logs, default=json_util.default)
 
 @app.route('/dates_with_entries')
 def dates_with_entries():
-	dates_with_entries = dict()
-	db = get_logs_db()
-	end_of_today = (time.time() - (time.time() % 86400)) + 86400
-	previous_days = [end_of_today - (x * 86400) for x in range(1,8)]
-	for previous_day_end in previous_days:
-		day_before_previous_day_end = previous_day_end - 86400
-		entry = list(db.findOne({'timestamp': {'$gt': day_before_previous_day_end, '$lt': previous_day_end}}).sort({'timestamp': 1}))
-		if False == entry:
-			entry = 0
+    dates_with_entries = dict()
+    db = get_logs_db()
+    end_of_today = (time.time() - (time.time() % 86400)) + 86400
+    previous_days = [end_of_today - (x * 86400) for x in range(1,8)]
+    for previous_day_end in previous_days:
+        day_before_previous_day_end = previous_day_end - 86400
+        entry = list(db.findOne({'timestamp': {'$gt': day_before_previous_day_end, '$lt': previous_day_end}}).sort({'timestamp': 1}))
+        if False == entry:
+            entry = 0
 
-		dates_with_entries[time.strftime("%d-%m", previous_day_end)] = entry
+        dates_with_entries[time.strftime("%d-%m", previous_day_end)] = entry
 
 @app.route('/log')
 def log():
-	requestedDate = request.args['date']
-	db = get_logs_db()
-	logs = list(db.find({'date': requestedDate}))
-	return json.dumps(logs, default=json_util.default)
+    requestedDate = request.args['date']
+    db = get_logs_db()
+    logs = list(db.find({'date': requestedDate}))
+    return json.dumps(logs, default=json_util.default)
 
 @app.route('/categories')
 def categories():
-	db = get_logs_db()
-	logs = list(db.distinct('type', {}))
-	return json.dumps(logs, default=json_util.default)
+    db = get_logs_db()
+    logs = list(db.distinct('type', {}))
+    return json.dumps(logs, default=json_util.default)
 
 @app.route('/search')
 def search():
-	title = request.args['title']
-	db = get_logs_db()
-	logs = list(db.find({'type': title}))
-	return json.dumps(logs, default=json_util.default)
+    title = request.args['title']
+    db = get_logs_db()
+    logs = list(db.find({'type': title}))
+    return json.dumps(logs, default=json_util.default)
 
 @app.route('/js/bundle.js')
 def send_js():
-	return send_file('dist/bundle.js')
+    return send_file('dist/bundle.js')
 
 @app.route('/js/bundle.js.map')
 def send_js_source_map():
-	return send_file('dist/bundle.js.map')
+    return send_file('dist/bundle.js.map')
 
 @app.route('/services/jwt')
 def sign_jwt():
-	# Team ID
-	ISSUER_ID = "C52AZ3BA5P"
-	KEY_ID = "RZGS2V73AJ"
-	f = open('./secrets/AuthKey.p8', 'r')
-	key = f.read()
-	f.close()
+    with open('./secrets/private-key', 'r') as private_key, open('./secrets/issuer-id') as issuer_id, open('./secrets/key-id') as key_id:
+        key_id_val = key_id.read().strip()
+        issuer_id_val = issuer_id.read().strip()
+        private_key_val = private_key.read().strip()
+        jwt_headers = {
+            'alg': "ES256",
+            'kid': key_id_val,
+            'typ': "JWT"
+        }
 
-	jwt_headers = {
-		'alg': "ES256",
-		'kid': KEY_ID,
-		'typ': "JWT"
-	}
+        claims = {
+            'iss': issuer_id_val,
+            'iat': time.time(),
+            'exp': time.time() + 20 * 60,
+        }
 
-	claims = {
-		'iss': ISSUER_ID,
-		'iat': time.time(),
-		'exp': time.time() + 20 * 60,
-	}
-
-	return jwt.encode(claims, key=key, algorithm="ES256", headers=jwt_headers)
+        return jwt.encode(claims, key=private_key_val, algorithm="ES256", headers=jwt_headers)
 
 
 def get_db():
-		client = MongoClient('mongodb', 27017)
-		db = client.snoopy
-		logs = db.signups
-		return logs
+        client = MongoClient('mongodb', 27017)
+        db = client.snoopy
+        logs = db.signups
+        return logs
 
 def get_logs_db():
-		client = MongoClient('mongodb', 27017)
-		db = client.snoopy
-		logs = db.police_logs
-		return logs
+        client = MongoClient('mongodb', 27017)
+        db = client.snoopy
+        logs = db.police_logs
+        return logs
