@@ -76,14 +76,6 @@ def search():
     logs = list(db.find({'type': title}))
     return json.dumps(logs, default=json_util.default)
 
-@app.route('/js/bundle.js')
-def send_js():
-    return send_file('dist/bundle.js')
-
-@app.route('/js/bundle.js.map')
-def send_js_source_map():
-    return send_file('dist/bundle.js.map')
-
 @app.route('/services/jwt')
 def sign_jwt():
     with open('./secrets/private-key', 'r') as private_key, open('./secrets/issuer-id') as issuer_id, open('./secrets/key-id') as key_id:
