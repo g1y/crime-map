@@ -10,10 +10,9 @@ export default class Dropdown extends Component {
             <NavDropdown.Item href="#action/3.4">Heatmap</NavDropdown.Item>
 
             <NavDropdown.Divider />
-            <NavDropdown.Header href="#action/3.4">Color Coding</NavDropdown.Header>
-            <NavDropdown.Item href="#action/3.4">Crime Types</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Officer Name</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"># of Responders</NavDropdown.Item>
+            <NavDropdown.Header href="#action/3.4">Marker Coloring</NavDropdown.Header>
+            <NavDropdown.Item href="#action/3.4">Crime Severity</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4">Type</NavDropdown.Item>
 
             <NavDropdown.Divider />
             <NavDropdown.Header>By Date</NavDropdown.Header>

@@ -29,7 +29,6 @@ func main() {
 		return
 	}
 
-
 	objectName := "bundle.js"
 	filePath := "./dist/bundle.js"
 	contentType := "application/javascript"

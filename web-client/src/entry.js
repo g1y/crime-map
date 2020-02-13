@@ -2,13 +2,8 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 
-import AppleMap from './map/apple-map.js';
+import App from './app';
 
-import './report-info.css';
-import './map.css';
-import './full-page.css';
-
-import Header from './header/header.js';
 
 function addTable() {
 	fetch('/categories').then(function(response) {
@@ -35,5 +30,4 @@ function addTable() {
 
 console.log(__API_ROOT__)
 
-ReactDOM.render(<Header/>, document.getElementById("header"));
-ReactDOM.render(<AppleMap/>, document.getElementById("map-container"))
+ReactDOM.render(<App/>, document.getElementById("app"));

@@ -13,7 +13,9 @@ export default class AppleMap extends Component {
         this.state = {
             markers: [],
             filters: {},
-            coloring: this.colorsBySeverity.bind(self),
+            coloring: null,
+            markerColoring: 'type',
+            self: self,
         };
 
         this.map = null;
@@ -25,11 +27,24 @@ export default class AppleMap extends Component {
         this.addMarkers();
     }
 
-    render() {
-        return <div id="mapKit" ref={this.mapKitDiv}></div>
+    color(coloring) {
+        if (coloring == 'type') {
+            this.colorMarkersByType();
+        } else {
+            this.colorMarkersBySeverity();
+        }
     }
 
-    colorsBySeverity(items) {
+    render() {
+        if (this.state.crimeMarkers) {
+            this.state.coloring(this.state.crimeMarkers);
+        }
+        return <div id="mapKit" ref={this.mapKitDiv}></div>
+
+    }
+
+    colorMarkersBySeverity() {
+        const items = this.state.markers;
         const crimeCategories = {
             "assault": "severe",
             "burg": "severe",
@@ -108,7 +123,8 @@ export default class AppleMap extends Component {
         Object.entries(markerGroups).forEach(assignColor);
     }
 
-    colorMarkersByType(markers) {
+    colorMarkersByType() {
+        const markers = this.state.markers;
         var typeGroups = markers.reduce(function(accumulator, current) {
             const type = current.entry.type.toLowerCase()
             if (current.entry.type in accumulator) {
@@ -126,14 +142,14 @@ export default class AppleMap extends Component {
     addMarkers() {
         let createMarkers = (responseJson) => {
             const crimeMarkers = responseJson.map(createCrimeMarker).filter(i => !!i);
-            this.state.coloring(crimeMarkers);
-            this.state.markers = crimeMarkers;
+            this.setState({
+                'markers': crimeMarkers,
+            });
 
             this.map.addAnnotations(crimeMarkers.map(markers => markers.marker));
         }
 
         fetch(__API_ROOT__  + '/entries?days=4').then(function(response) {
-            console.log(response);
             return response.json();
         }).then(createMarkers);
     }
@@ -157,8 +173,6 @@ export default class AppleMap extends Component {
                 break;
             }
         });
-
-        console.log("init-map");
 
         var SLO = new mapkit.CoordinateRegion(
             new mapkit.Coordinate(35.2827524, -120.6596156),

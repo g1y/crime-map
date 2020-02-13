@@ -61,7 +61,7 @@ module.exports = {
         contentBase: './dist',
         publicPath: '/'
     },
-    watch: true,
+    watch: false,
     watchOptions: {
         aggregateTimeout: 300,
         poll: 1000
