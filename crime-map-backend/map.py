@@ -22,7 +22,7 @@ def main_page():
     else:
         frontend_root = "https://crime-map.sfo2.cdn.digitaloceanspaces.com"
 
-    return render_template('index.html', frontend_root=frontend_root)
+    return render_template('index.html', frontend_root=frontend_root, environment=os.getenv("FLASK_ENV"))
 
 
 @app.route('/entries')
