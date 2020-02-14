@@ -3,10 +3,26 @@ package main
 import (
 	"log"
 	"os"
-	"net/http"
+	"strings"
+
+	"context"
+
+	"github.com/digitalocean/godo"
+	"golang.org/x/oauth2"
 
 	"github.com/minio/minio-go"
 )
+
+type TokenSource struct {
+	AccessToken string
+}
+
+func (t *TokenSource) Token() (*oauth2.Token, error) {
+	token := &oauth2.Token{
+		AccessToken: t.AccessToken,
+	}
+	return token, nil
+}
 
 func main() {
 	accessKey := os.Getenv("SPACES_KEY")
@@ -38,4 +54,54 @@ func main() {
 	}
 
 	log.Printf("Successfully uploaded %s of size %d\n", objectName, n)
+
+	pat := os.Getenv("DO_ACCESS_TOKEN")
+	if pat == "" {
+		log.Fatalln("Access token required")
+	}
+
+	tokenSource := &TokenSource{
+		AccessToken: pat,
+	}
+
+	oauthClient := oauth2.NewClient(oauth2.NoContext, tokenSource)
+	doClient := godo.NewClient(oauthClient)
+	ctx := context.TODO()
+
+	log.Printf("Listing CDNs")
+	cdnName := "crime-map"
+	cdn, err := getCDN(*doClient, ctx, cdnName)
+	if err != nil || cdn == nil {
+		log.Fatalln("Could not find CDN: " + cdnName)
+	}
+
+	log.Printf("Flushing CDN Cache")
+	flushRequest := &godo.CDNFlushCacheRequest{
+		Files: []string{
+			"*",
+		},
+	}
+	_, err = doClient.CDNs.FlushCache(ctx, cdn.ID, flushRequest)
+}
+
+func getCDN(client godo.Client, ctx context.Context, cdnName string) (*godo.CDN, error) {
+	opt := &godo.ListOptions{
+		Page:    1,
+		PerPage: 200,
+	}
+
+	cdns, _, err := client.CDNs.List(ctx, opt)
+	if err != nil {
+		return nil, err
+	}
+
+	for i := range cdns {
+		cdn := cdns[i]
+		log.Println(cdn.Origin)
+		if strings.HasPrefix(cdn.Origin, cdnName + ".") {
+			return &cdn, nil
+		}
+	}
+
+	return nil, nil
 }
