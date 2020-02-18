@@ -13,7 +13,6 @@ spec:
   selector:
     app: kafka-broker
     id: "0"
-  type: LoadBalancer
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1

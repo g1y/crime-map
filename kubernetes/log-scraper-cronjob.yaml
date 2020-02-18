@@ -12,6 +12,7 @@ spec:
           containers:
           - name: log-scraper
             image: g1ymoore/crime-map:log-scraper
+            imagePullPolicy: Always
             resources:
               requests:
                 memory: "64Mi"
