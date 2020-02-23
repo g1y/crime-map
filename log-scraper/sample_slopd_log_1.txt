@@ -1,0 +1,1166 @@
+RCAS
+02/20/20               San Luis Obispo Police Department                   48901
+08:52                            Summary Report                      
+===============================================================================
+200219015 02/19/20 Received:07:46 Dispatched:07:52 Arrived:08:01 Cleared:08:07
+===============================================================================
+Type: Suspicious                                              Location:PN6
+As Observed:
+
+Addr: 836 PACIFIC; MARSH STREET PARKING STRUCTU  Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4238                ,4264
+ Des: (MDC) Completed call incid#=200219015 call=20l
+CALL COMMENTS: RP THINKS SHE SEES HS TRANSACTION OCCURRING IN PARKING STRUCTURE,
+===============================================================================
+200219016 02/19/20 Received:07:53 Dispatched:      Arrived:07:55 Cleared:07:55
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN5
+As Observed:
+
+Addr: 1055 MONTEREY; COUNTY GOVERNMENT CENTER;   Clearance Code:Unfounded
+
+Responsible Officer: Lehnhoff, S
+Units: COMSP2
+ Des: incid#=200219016 Completed call disp:NR clr:UNF call=21l
+CALL COMMENTS: EMPLOYEE ADVS MISDIAL, WILL RECALL BUSN LINE
+===============================================================================
+200219017 02/19/20 Received:08:10 Dispatched:      Arrived:08:11 Cleared:08:11
+===============================================================================
+Type: ABAND VEHICLE                                           Location:PN5
+As Observed:
+
+Addr: 570 PEACH; MISSION GARDENS; GRID J-09, Sa  Clearance Code:Report To Follow
+
+Responsible Officer: Lehnhoff, S
+Units: COMSP2
+ Des: incid#=200219017 Completed call clr:RTF call=24l
+CALL COMMENTS: WHI FORD PANEL VAN 7NOM173
+===============================================================================
+200219018 02/19/20 Received:08:09 Dispatched:08:22 Arrived:08:36 Cleared:08:49
+===============================================================================
+Type: Noise Other                                             Location:PN1
+As Observed:
+
+Addr: 71 PALOMAR; THE ACADEMY PALOMAR; GRID I-0  Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4232                ,4238
+ Des: (MDC) Completed call incid#=200219018 call=22l
+CALL COMMENTS: ON GOING PROBLEM W/ALARM SOUNDING FROM GARAGE AREA, OCCURS ALL TH
+===============================================================================
+200219019 02/19/20 Received:08:16 Dispatched:08:22 Arrived:08:28 Cleared:09:51
+===============================================================================
+
+
+Type: Theft-Vehicle                                           Location:PN12
+As Observed:
+      Theft, Vehicle: Automobile
+
+Addr: 3960 HIGUERA S # 57; GRID I-16, San Luis   Clearance Code:Report Approved/
+
+Responsible Officer: Stevens, J
+Units: 4265
+ Des: incid#=200219019 Completed call clr:RTF call=25l
+CALL COMMENTS: RP WOKE UP AND HER VEH WAS NOT IN THE DRIVEWAY
+===============================================================================
+200219020 02/19/20 Received:08:29 Dispatched:08:34 Arrived:08:54 Cleared:11:06
+===============================================================================
+Type: Juvenile Prob                                           Location:PN7
+As Observed:
+      Juvenile Problem
+
+Addr: 2755 AUGUSTA; SINSHEIMER SCHOOL; GRID M-1  Clearance Code:Field Interview
+
+Responsible Officer: Alexander, D
+Units: 4212
+ Des: (MDC) Completed call incid#=200219020 call=26l
+CALL COMMENTS: RP WILL BE WAITING IN THE OFFICE @ SCHOOL
+===============================================================================
+200219021 02/19/20 Received:08:49 Dispatched:08:51 Arrived:08:57 Cleared:09:03
+===============================================================================
+Type: Alarm Audible                                           Location:PN9
+As Observed:
+
+Addr: 3196 HIGUERA S # E; SHAW FIRM GRID J-14,   Clearance Code:ALARM-HUMAN ERRO
+
+Responsible Officer: Herrera, M
+Units: 4264                ,4238
+ Des: (MDC) Completed call incid#=200219021 call=27l
+CALL COMMENTS: FRONT ENTRY DOOR/MOTION
+===============================================================================
+200219022 02/19/20 Received:09:20 Dispatched:09:21 Arrived:09:26 Cleared:09:40
+===============================================================================
+Type: Disorderly                                              Location:PN5
+As Observed:
+
+Addr: 893 MARSH; POST OFFICE; GRID K-09, San Lu  Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4238                ,4232
+ Des: (MDC) Completed call incid#=200219022 call=29l
+CALL COMMENTS: 2-3 MALE TRANSIENTS PHYSICALLY FIGHTING INSIDE
+===============================================================================
+200219023 02/19/20 Received:09:23 Dispatched:09:24 Arrived:      Cleared:09:25
+===============================================================================
+Type: ABAND VEHICLE                                           Location:PN9
+As Observed:
+      Abandoned Vehicle
+
+
+Addr: 253 GRANADA; X FROM; AMERICAN FAIR CREDIT  Clearance Code:Report To Follow
+
+Responsible Officer: Recinos, V
+Units: COM2
+ Des: incid#=200219023 Completed call clr:RTF oc:ABAN call=30l
+CALL COMMENTS: BEIGE AND BRO MH CA/ 7YTF476
+===============================================================================
+200219024 02/19/20 Received:09:25 Dispatched:09:30 Arrived:09:43 Cleared:11:10
+===============================================================================
+Type: COLL HIT AND RU                                         Location:PN1
+As Observed:
+
+Addr: 165 PATRICIA; GRID H-06, San Luis Obispo,  Clearance Code:No Report
+
+Responsible Officer: Sisemore, P
+Units: 4225
+ Des: incid#=200219024 info exchanged disp:NR clr:NR call=31l
+CALL COMMENTS: RP SHARES FENCE W/CHURCH PLOT AND SUBJ JUST DROVE INTO FENCE, VEH
+===============================================================================
+200219025 02/19/20 Received:09:32 Dispatched:      Arrived:09:32 Cleared:09:33
+===============================================================================
+Type: Towed Vehicle                                           Location:PN2
+As Observed:
+
+Addr: 1262 MURRAY; MURRAY ST STATION APTS; GRID  Clearance Code:No Report
+
+Responsible Officer: Jacobs, E
+Units: COM7
+ Des: incid#=200219025 pptow disp:NR clr:NR call=33l
+CALL COMMENTS: 09:32:24 02/19/2020 - Jacobs, E
+===============================================================================
+200219026 02/19/20 Received:09:29 Dispatched:09:52 Arrived:10:07 Cleared:11:16
+===============================================================================
+Type: BURG RES                                                Location:PN3
+As Observed:
+      Burglary-Non Classified
+
+Addr: 1055 CALIFORNIA; GRID L-08, San Luis Obis  Clearance Code:Report To Follow
+
+Responsible Officer: Rouse, Q
+Units: 4232
+ Des: (MDC) Completed call incid#=200219026 call=32l
+CALL COMMENTS: 10-21, RP NOT HOME
+===============================================================================
+200219027 02/19/20 Received:09:39 Dispatched:09:44 Arrived:09:58 Cleared:10:45
+===============================================================================
+Type: Vandalism                                               Location:PN8
+As Observed:
+      Destruct/Damage/Vandalize Prop
+
+Addr: 1568 MADONNA # 53; GRID G-14, San Luis Ob  Clearance Code:Report Returned
+
+
+Responsible Officer: Herrera, M
+Units: 4264
+ Des: (MDC) Completed call incid#=200219027 call=34l
+CALL COMMENTS: SPANISH SPEAKING RP IN PD LOBBY
+===============================================================================
+200219028 02/19/20 Received:09:52 Dispatched:10:02 Arrived:10:15 Cleared:10:23
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN7
+As Observed:
+
+Addr: 2180 JOHNSON; DRUG AND ALCOHOL SERVICES;   Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4238                ,4265
+ Des: (MDC) Completed call incid#=200219028 call=35l
+CALL COMMENTS: ON CB, MSG SAYS THE TESTING OFC HAS BEEN REACHED
+===============================================================================
+200219029 02/19/20 Received:09:55 Dispatched:10:31 Arrived:10:36 Cleared:11:03
+===============================================================================
+Type: Suspicious                                              Location:PN12
+As Observed:
+
+Addr: 251 TANK FARM; PROGRESSIVE AUTO ART; GRID  Clearance Code:No Report
+
+Responsible Officer: Stevens, J
+Units: 4265
+ Des: (MDC) Completed call incid#=200219029 call=36l
+CALL COMMENTS: 1021 RP - RP WANTING TO MAKE 10851 RPT
+===============================================================================
+200219030 02/19/20 Received:10:13 Dispatched:      Arrived:10:26 Cleared:10:30
+===============================================================================
+Type: Alarm Audible                                           Location:PN3
+As Observed:
+
+Addr: 1815 MONTEREY; MONDAY CLUB; GRID L-07, Sa  Clearance Code:ALARM-HUMAN ERRO
+
+Responsible Officer: Stevens, J
+Units: 4265
+ Des: (MDC) Completed call incid#=200219030 call=37l
+CALL COMMENTS: FRONT DOOR, MOTION SMALL ROOM, HALL INFRA RED AND MOTION LARGE RO
+===============================================================================
+200219031 02/19/20 Received:10:23 Dispatched:10:35 Arrived:10:54 Cleared:11:38
+===============================================================================
+Type: Parking Problem                                         Location:PN6
+As Observed:
+
+Addr: 972 CHURCH; GRID K-10, San Luis Obispo, C  Clearance Code:Report to Watch
+
+Responsible Officer: McCornack, C
+Units: 4211
+ Des: incid#=200219031 Completed call clr:RTF call=39l
+CALL COMMENTS: VEH BLOCKING RP'S DRIVEWAY , HE NEEDS IT TOWED
+
+
+===============================================================================
+200219032 02/19/20 Received:10:24 Dispatched:10:35 Arrived:11:43 Cleared:12:00
+===============================================================================
+Type: Parking Problem                                         Location:PN11
+As Observed:
+
+Addr: SACRAMENTO & VIA ESTEBAN; GRID M-14, San   Clearance Code:Gone on Arrival
+
+Responsible Officer: McCornack, C
+Units: 4211
+ Des: incid#=200219032 Completed call call=40l
+CALL COMMENTS: ON SACRAMENTO BTWN VIA ESTEBAN AND ORCUTT
+===============================================================================
+200219033 02/19/20 Received:10:27 Dispatched:      Arrived:10:27 Cleared:10:30
+===============================================================================
+Type: Towed Vehicle                                           Location:PN1
+As Observed:
+
+Addr: 633 COUPER; MOUNTAIN VIEW APARTMENTS; GRI  Clearance Code:No Report
+
+Responsible Officer: Recinos, V
+Units: COM2
+ Des: incid#=200219033 Completed call disp:NR clr:NR call=42l
+CALL COMMENTS:
+===============================================================================
+200219034 02/19/20 Received:10:27 Dispatched:10:35 Arrived:      Cleared:
+===============================================================================
+Type: Parking Problem                                         Location:PN2
+As Observed:
+
+Addr: 560 HATHWAY; GRID K-07, San Luis Obispo,   Clearance Code:Citation
+
+Responsible Officer: McCornack, C
+Units: 4211                ,4225
+ Des:
+CALL COMMENTS: 2ND HAND INFO TO RP FROM TENANT
+===============================================================================
+200219035 02/19/20 Received:10:27 Dispatched:      Arrived:10:29 Cleared:10:32
+===============================================================================
+Type: COLL EXTRICATIO                                         Location:PN5
+As Observed:
+
+Addr: BROAD & MARSH; GRID J-10; GRID K-10, San   Clearance Code:No Report
+
+Responsible Officer: Jacobs, E
+Units: COM7
+ Des: incid#=200219035 NR - PART OF COMSP2'S FIRE PRACTICAL disp:NR clr:NR
+      call=44l
+CALL COMMENTS: ZZZZZZZZZZZZZZZ
+===============================================================================
+200219036 02/19/20 Received:10:33 Dispatched:      Arrived:10:35 Cleared:10:38
+===============================================================================
+
+
+Type: Fire Lg Trash                                           Location:PN3
+As Observed:
+
+Addr: 1820 HOPE; NEXT DOOR GRID L-06, San Luis   Clearance Code:No Report
+
+Responsible Officer: Jacobs, E
+Units: COM7
+ Des: incid#=200219036 NR - PART OF FIRE PRACTICAL disp:NR clr:NR call=45l
+CALL COMMENTS: ZZZZZZZZZZZZZZZZZZZZZZ
+===============================================================================
+200219037 02/19/20 Received:10:52 Dispatched:10:58 Arrived:      Cleared:10:58
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN5
+As Observed:
+
+Addr: 1055 MONTEREY; COUNTY GOVERNMENT CENTER;   Clearance Code:Call Cancelled
+
+Responsible Officer: Recinos, V
+Units: COM2
+ Des: incid#=200219037 Completed call disp:CAN clr:CAN call=47l
+CALL COMMENTS: ON RECALL SPOKE , WILL BE CHECKING AND RECALL BUSN LINE
+===============================================================================
+200219038 02/19/20 Received:10:51 Dispatched:11:00 Arrived:11:09 Cleared:11:11
+===============================================================================
+Type: Littering                                               Location:PN6
+As Observed:
+
+Addr: 1400 OSOS; MITCHELL PARK; GRID K-10, San   Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4238                ,4264
+ Des: (MDC) Completed call incid#=200219038 call=46l
+CALL COMMENTS: PISMO SIDE BY PLAYGROUND
+===============================================================================
+200219039 02/19/20 Received:11:09 Dispatched:      Arrived:11:09 Cleared:11:10
+===============================================================================
+Type: Towed Vehicle                                           Location:PN2
+As Observed:
+
+Addr: MONTALBAN & LEMON; GRID K-07, San Luis Ob  Clearance Code:Report To Follow
+
+Responsible Officer: Sisemore, P
+Units: 4225
+ Des: incid#=200219039 Completed call clr:RTF call=48l
+CALL COMMENTS: 11:09:48 02/19/2020 - Jacobs, E - From: Sisemore, P
+===============================================================================
+200219040 02/19/20 Received:11:25 Dispatched:11:26 Arrived:11:31 Cleared:11:35
+===============================================================================
+Type: Alarm Silent                                            Location:PN5
+As Observed:
+
+
+
+Addr: 785 MARSH # B; CHANGE OF A DRESS; GRID K-  Clearance Code:ALARM-HUMAN ERRO
+
+Responsible Officer: Magana, M
+Units: 4238                ,4265                ,4264                ,4232
+ Des: (MDC) Completed call incid#=200219040 call=49l
+CALL COMMENTS: CASH REG SILENT PANIC
+===============================================================================
+200219041 02/19/20 Received:11:33 Dispatched:11:35 Arrived:11:54 Cleared:12:43
+===============================================================================
+Type: Found Property                                          Location:PN4
+As Observed:
+      Lost or Found Property
+
+Addr: 1760 ALISAL; GRID M-08, San Luis Obispo,   Clearance Code:Report Approved/
+
+Responsible Officer: Sandoval, A
+Units: 42K2
+ Des: (MDC) Completed call incid#=200219041 call=50l
+CALL COMMENTS: RP IN PD LOBBY
+===============================================================================
+200219042 02/19/20 Received:11:56 Dispatched:12:01 Arrived:12:06 Cleared:12:12
+===============================================================================
+Type: Loitering                                               Location:PN3
+As Observed:
+
+Addr: 1422 MONTEREY # A201; POWERSOURCE CHIROPR  Clearance Code:Gone on Arrival
+
+Responsible Officer: Rouse, Q
+Units: 4232                ,4264
+ Des: (MDC) Completed call incid#=200219042 call=52l
+CALL COMMENTS: TRANS MALE TRYING TO GET INTO BATHROOM THAT'S LOCKED, ALSO GOING
+===============================================================================
+200219043 02/19/20 Received:12:02 Dispatched:12:13 Arrived:12:15 Cleared:12:24
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN7
+As Observed:
+
+Addr: 1941 JOHNSON; PACIFIC MEDICAL PLAZA; GRID  Clearance Code:No Report
+
+Responsible Officer: Herrera, M
+Units: 4264                ,4232
+ Des: (MDC) Completed call incid#=200219043 call=53l
+CALL COMMENTS: IMMEDIATE HANG UP
+===============================================================================
+200219044 02/19/20 Received:12:08 Dispatched:      Arrived:12:26 Cleared:14:03
+===============================================================================
+Type: Found Property                                          Location:PN12
+As Observed:
+      Lost or Found Property
+
+Addr: 3971 HIGUERA S; STARBUCKS; GRID I-17, San  Clearance Code:Report Approved/
+
+Responsible Officer: Barrett, J
+Units: 42K1
+ Des: (MDC) Completed call incid#=200219044 call=54l
+CALL COMMENTS: STORE REQ OFC PICK UP 5 ITEMS THAT HAVE BEEN IN THEIR LOST AND FO
+===============================================================================
+200219045 02/19/20 Received:12:15 Dispatched:12:16 Arrived:      Cleared:12:16
+===============================================================================
+Type: ABAND VEHICLE                                           Location:PN10
+As Observed:
+
+Addr: 2366 SENDERO; GRID K-12, San Luis Obispo,  Clearance Code:Call Cancelled
+
+Responsible Officer: Recinos, V
+Units: COM2
+ Des: incid#=200219045 Completed call clr:RTF oc:ABAN call=55l
+CALL COMMENTS: BEIGE RV CA/ EZKAMPR
+===============================================================================
+200219046 02/19/20 Received:12:18 Dispatched:12:22 Arrived:12:23 Cleared:12:35
+===============================================================================
+Type: Suspicious                                              Location:PN2
+As Observed:
+
+Addr: 1185 FOOTHILL # 13; GRID J-06, San Luis O  Clearance Code:No Report
+
+Responsible Officer: Stevens, J
+Units: 4265
+ Des: (MDC) Completed call incid#=200219046 call=56l
+CALL COMMENTS: 10-21
+===============================================================================
+200219047 02/19/20 Received:12:39 Dispatched:      Arrived:12:39 Cleared:13:42
+===============================================================================
+Type: Warrant                                                 Location:PN10
+As Observed:
+      Fraud/Swindle/Confidence Game
+
+Addr: 2333 MEADOW; MEADOW PARK; GRID K-12, San   Clearance Code:Report Approved/
+
+Responsible Officer: Rouse, Q
+Units: 4232                ,4264                ,4238
+ Des: incid#=200219047 AP/ JARRARD,PRESTON 100884 WARRANT, PC530-5(A),
+      PC484G(A), HS11 + 377(A) clr:RTF call=59l
+CALL COMMENTS:
+===============================================================================
+200219048 02/19/20 Received:12:36 Dispatched:13:18 Arrived:13:19 Cleared:13:50
+===============================================================================
+Type: ATTEMPT THEFT                                           Location:PN7
+As Observed:
+      Theft, Property, Other
+
+Addr: 2145 AUGUSTA; GRID L-11, San Luis Obispo,  Clearance Code:Report To Follow
+
+Responsible Officer: Herrera, M
+Units: 4265                ,4264
+ Des: (MDC) Completed call incid#=200219048 call=58l
+
+
+CALL COMMENTS: 10-21
+===============================================================================
+200219049 02/19/20 Received:12:52 Dispatched:      Arrived:13:01 Cleared:13:03
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN5
+As Observed:
+
+Addr: 1035 PALM; DISTRICT ATTORNEY; GRID K-09,   Clearance Code:Call Cancelled
+
+Responsible Officer: Mercer, K
+Units: COM9
+ Des: incid#=200219049 Completed call disp:CAN clr:CAN call=62l
+CALL COMMENTS: IMMEDIATE HANG UP
+===============================================================================
+200219050 02/19/20 Received:12:52 Dispatched:12:54 Arrived:12:59 Cleared:13:21
+===============================================================================
+Type: Disorderly                                              Location:PN2
+As Observed:
+
+Addr: 251 GRAND; CHRIS JESPERSEN SCHOOL; GRID L  Clearance Code:No Report
+
+Responsible Officer: Stevens, J
+Units: 4265                ,4225
+ Des: (MDC) Completed call incid#=200219050 call=63l
+CALL COMMENTS: STUDENT IS BEING 415 PHYSICAL WITH STAFF
+===============================================================================
+200219051 02/19/20 Received:12:55 Dispatched:      Arrived:13:05 Cleared:13:10
+===============================================================================
+Type: Trespassing                                             Location:PN5
+As Observed:
+
+Addr: 868 HIGUERA; ROSS; GRID K-09, San Luis Ob  Clearance Code:Field Interview
+
+Responsible Officer: Herrera, M
+Units: 4264
+ Des: (MDC) Completed call incid#=200219051 call=64l
+CALL COMMENTS: TRANSIENTS WERE REFUSING TO LEAVE AREA, BECAME 415 VERBAL WITH RP
+===============================================================================
+200219052 02/19/20 Received:13:09 Dispatched:      Arrived:13:14 Cleared:13:17
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN5
+As Observed:
+
+Addr: 1055 MONTEREY; COUNTY GOVERNMENT CENTER;   Clearance Code:No Report
+
+Responsible Officer: Herrera, M
+Units: 4264
+ Des: (MDC) Completed call incid#=200219052 call=65l
+CALL COMMENTS: RECALLED WENT TO VOICEMAIL FOR 
+===============================================================================
+200219053 02/19/20 Received:13:25 Dispatched:      Arrived:13:25 Cleared:13:28
+===============================================================================
+
+
+Type: Towed Vehicle                                           Location:PN2
+As Observed:
+
+Addr: 1185 FOOTHILL; PINECREEK CONDOS; GRID J-0  Clearance Code:No Report
+
+Responsible Officer: Mercer, K
+Units: COM9
+ Des: incid#=200219053 Completed call disp:NR clr:NR call=66l
+CALL COMMENTS: GRY KIA SEDONA L/5MCM958
+===============================================================================
+200219054 02/19/20 Received:13:29 Dispatched:      Arrived:13:32 Cleared:13:32
+===============================================================================
+Type: ABAND VEHICLE                                           Location:PN10
+As Observed:
+
+Addr: 2900 BROAD; TASTE CATERING AND EATERY; GR  Clearance Code:Call Cancelled
+
+Responsible Officer: Lehnhoff, S
+Units: COMSP2
+ Des: incid#=200219054 Completed call clr:RTF call=68l
+CALL COMMENTS: TAN MOTORHOME 2AUD240 IN PLOT
+===============================================================================
+200219055 02/19/20 Received:13:28 Dispatched:13:41 Arrived:13:54 Cleared:14:14
+===============================================================================
+Type: Theft                                                   Location:PN10
+As Observed:
+
+Addr: 267 BRIDGE # 201; GRID J-12, San Luis Obi  Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4238
+ Des: (MDC) Completed call incid#=200219055 call=67l
+CALL COMMENTS: 10-21 RP
+===============================================================================
+200219056 02/19/20 Received:13:40 Dispatched:      Arrived:13:40 Cleared:14:13
+===============================================================================
+Type: Welfare Check                                           Location:PN6
+As Observed:
+
+Addr: 784 HIGH; TRANSITIONS; GRID K-11, San Lui  Clearance Code:Field Interview
+
+Responsible Officer: Koznek, T.
+Units: 4218
+ Des: (MDC) Completed call incid#=200219056 call=69l
+CALL COMMENTS: 14:13:44 02/19/2020 - Koznek, T.
+===============================================================================
+200219057 02/19/20 Received:14:02 Dispatched:14:10 Arrived:14:10 Cleared:14:23
+===============================================================================
+Type: Theft                                                   Location:PN5
+As Observed:
+
+
+
+Addr: HIGUERA & CHORRO; GRID K-09, San Luis Obi  Clearance Code:Report To Follow
+
+Responsible Officer: Stevens, J
+Units: 4265
+ Des: (MDC) Completed call incid#=200219057 call=70l
+CALL COMMENTS: PD LOBBY
+===============================================================================
+200219058 02/19/20 Received:14:16 Dispatched:14:22 Arrived:14:24 Cleared:14:25
+===============================================================================
+Type: Lost Property                                           Location:PN4
+As Observed:
+
+Addr: 1893 CORRALITOS; GRID M-07, San Luis Obis  Clearance Code:Report Approved/
+
+Responsible Officer: Barrett, J
+Units: 42K1
+ Des: (MDC) Completed call incid#=200219058 call=71l
+CALL COMMENTS: BRO MENS WALLET
+===============================================================================
+200219059 02/19/20 Received:14:21 Dispatched:14:25 Arrived:14:34 Cleared:14:37
+===============================================================================
+Type: Parking Problem                                         Location:PN7
+As Observed:
+
+Addr: 1392 KENTWOOD; GRID N-13, San Luis Obispo  Clearance Code:Gone on Arrival
+
+Responsible Officer: Sisemore, P
+Units: 4225
+ Des: incid#=200219059 VEH GOA - ADVISED RESIDENT OF COMPLAINT disp:NR clr:GOA
+      call=72 + l
+CALL COMMENTS: VEH IS HANGING OUT OF DRIVEWAY BLOCKING SIDEWALK
+===============================================================================
+200219060 02/19/20 Received:14:57 Dispatched:      Arrived:14:57 Cleared:14:59
+===============================================================================
+Type: Towed Vehicle                                           Location:PN6
+As Observed:
+
+Addr: 1160 MARSH; WELLS FARGO ADVISORS; GRID K-  Clearance Code:No Report
+
+Responsible Officer: Jacobs, E
+Units: COM7
+ Des: incid#=200219060 PPTOW disp:NR clr:NR call=74l
+CALL COMMENTS: 14:57:21 02/19/2020 - Jacobs, E
+===============================================================================
+200219061 02/19/20 Received:14:55 Dispatched:15:02 Arrived:      Cleared:15:05
+===============================================================================
+Type: Trespassing                                             Location:PN12
+As Observed:
+
+Addr: 3971 HIGUERA S; STARBUCKS; GRID I-17, San  Clearance Code:Call Cancelled
+
+
+
+Responsible Officer: Herrera, M
+Units: 4264                ,4238                ,4225
+ Des: incid#=200219061 Completed call disp:CAN clr:CAN call=73l
+CALL COMMENTS: 3 WM'S INSIDE STORE BEING LOUD & INVADING OTHER CUSTOMERS PERSONA
+===============================================================================
+200219062 02/19/20 Received:15:11 Dispatched:      Arrived:15:11 Cleared:15:43
+===============================================================================
+Type: Towed Vehicle                                           Location:PN10
+As Observed:
+
+Addr: BEEBEE & BRIDGE; GRID J-12, San Luis Obis  Clearance Code:Report To Follow
+
+Responsible Officer: Sisemore, P
+Units: 4225                ,4264
+ Des: incid#=200219062 Completed call clr:RTF call=76l
+CALL COMMENTS:
+===============================================================================
+200219063 02/19/20 Received:15:20 Dispatched:15:24 Arrived:15:35 Cleared:15:41
+===============================================================================
+Type: Citizen Dispute                                         Location:PN2
+As Observed:
+
+Addr: 526 KENTUCKY # 6; GRID K-07, San Luis Obi  Clearance Code:No Report
+
+Responsible Officer: Rouse, Q
+Units: 4232
+ Des: (MDC) Completed call incid#=200219063 call=77l
+CALL COMMENTS: 1021 RP
+===============================================================================
+200219064 02/19/20 Received:15:30 Dispatched:15:35 Arrived:15:53 Cleared:15:55
+===============================================================================
+Type: Traffic Hazard                                          Location:PN10
+As Observed:
+      Traffic Hazard
+
+Addr: 3295 ROCKVIEW; GRID L-14, San Luis Obispo  Clearance Code:Negative Violati
+
+Responsible Officer: Barrett, J
+Units: 42K1
+ Des: (MDC) Completed call incid#=200219064 call=79l
+CALL COMMENTS: MOVING TRAILER ENCROACHING INTO TRAFFIC AND NOT LEGALLY PARKED PE
+===============================================================================
+200219065 02/19/20 Received:15:37 Dispatched:15:41 Arrived:15:52 Cleared:16:01
+===============================================================================
+Type: Assist Req                                              Location:PN5
+As Observed:
+
+Addr: 885 HIGUERA; STARBUCKS; GRID K-09, San Lu  Clearance Code:No Report
+
+Responsible Officer: Magana, M
+Units: 4238
+ Des: (MDC) Completed call incid#=200219065 call=80l
+CALL COMMENTS: WALLET FOUND INSIDE THE BUSN W/2 DIFFT SETS OF ID'S AND CC'S
+===============================================================================
+200219066 02/19/20 Received:16:05 Dispatched:16:09 Arrived:16:21 Cleared:16:37
+===============================================================================
+Type: Suspicious                                              Location:PN8
+As Observed:
+      Suspicious Person/Circumstance
+
+Addr: 1314 MADONNA; GROCERY OUTLET; GRID G-14,   Clearance Code:No Report
+
+Responsible Officer: McCornack, C
+Units: 4211
+ Des: (MDC) Completed call incid#=200219066 call=82l
+CALL COMMENTS: 10-21 RP
+===============================================================================
+200219067 02/19/20 Received:16:21 Dispatched:16:36 Arrived:16:46 Cleared:17:02
+===============================================================================
+Type: Vandalism                                               Location:PN2
+As Observed:
+
+Addr: 200 SANTA ROSA; MUSTANG VILLAGE II; GRID   Clearance Code:Report Approved/
+
+Responsible Officer: Berrios, G
+Units: 4216
+ Des: (MDC) Completed call incid#=200219067 call=83l
+CALL COMMENTS: PD LOBBY
+===============================================================================
+200219068 02/19/20 Received:16:34 Dispatched:16:46 Arrived:16:55 Cleared:17:05
+===============================================================================
+Type: Welfare Check                                           Location:PN6
+As Observed:
+
+Addr: 667 MARSH # A; ASSISTANCE LEAGUE THRIFT S  Clearance Code:No Report
+
+Responsible Officer: Herrera, M
+Units: 4264                ,4232
+ Des: (MDC) Completed call incid#=200219068 call=84l
+CALL COMMENTS: FEMALE WEARING A BBALL CAP LAYING DOWN ON HER SIDE PASSED OUT NEA
+===============================================================================
+200219069 02/19/20 Received:16:37 Dispatched:      Arrived:16:53 Cleared:17:01
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN7
+As Observed:
+
+Addr: 1941 JOHNSON; PACIFIC MEDICAL PLAZA; GRID  Clearance Code:No Report
+
+Responsible Officer: Mercer, K
+Units: COM9
+ Des: incid#=200219069 Completed call disp:NR clr:NR call=86l
+CALL COMMENTS: IMMEDIATE HANG UP
+===============================================================================
+200219070 02/19/20 Received:16:37 Dispatched:17:03 Arrived:17:23 Cleared:18:19
+===============================================================================
+
+
+Type: Fraud                                                   Location:PN10
+As Observed:
+
+Addr: 380 SAGE; GRID K-15, San Luis Obispo, CA   Clearance Code:Report Approved/
+
+Responsible Officer: Berrios, G
+Units: 4216
+ Des: (MDC) Completed call incid#=200219070 call=85l
+CALL COMMENTS: RP IN PD LOBBY
+===============================================================================
+200219071 02/19/20 Received:16:58 Dispatched:17:07 Arrived:17:07 Cleared:17:54
+===============================================================================
+Type: COLL NON INJ                                            Location:PN11
+As Observed:
+
+Addr: CAPITOLIO & SACRAMENTO; GRID M-14, San Lu  Clearance Code:No Report
+
+Responsible Officer: Sisemore, P
+Units: 4225
+ Des: incid#=200219071 Completed call disp:NR clr:NR call=87l
+CALL COMMENTS: RP IN PD LOBBY
+===============================================================================
+200219072 02/19/20 Received:17:12 Dispatched:17:39 Arrived:17:56 Cleared:18:02
+===============================================================================
+Type: Suspicious                                              Location:PN1
+As Observed:
+
+Addr: 289 WESTMONT; GRID H-04, San Luis Obispo,  Clearance Code:Gone on Arrival
+
+Responsible Officer: Herrera, M
+Units: 4264
+ Des: (MDC) Completed call incid#=200219072 call=88l
+CALL COMMENTS: SOLICITOR CAME UP TO RP'S DOOR, WAS DIRESPECTFUL, GOT IN WIFE'S F
+===============================================================================
+200219073 02/19/20 Received:17:13 Dispatched:      Arrived:17:18 Cleared:17:19
+===============================================================================
+Type: Suspicious                                              Location:PN1
+As Observed:
+
+Addr: PRINCETON & HIGHLAND; GRID I-05, San Luis  Clearance Code:No Report
+
+Responsible Officer: Mercer, K
+Units: COM9
+ Des: incid#=200219073 Completed call disp:NR clr:NR call=89l
+CALL COMMENTS: RP REPORTING SOLICITOR IN HIS NEIGHBORHOOD THAT HE DOESNT THINK H
+===============================================================================
+200219074 02/19/20 Received:17:53 Dispatched:      Arrived:17:54 Cleared:17:54
+===============================================================================
+Type: Alarm Audible                                           Location:PN6
+As Observed:
+
+
+Addr: 245 HIGUERA; ABOVE GRADE ENGINEERING; GRI  Clearance Code:Call Cancelled
+
+Responsible Officer: Mercer, K
+Units: COM9
+ Des: incid#=200219074 Completed call disp:CAN clr:CAN call=92l
+CALL COMMENTS: BURG EAST ENTRY AND EXIT
+===============================================================================
+200219075 02/19/20 Received:18:12 Dispatched:      Arrived:18:21 Cleared:18:38
+===============================================================================
+Type: Assist Req                                              Location:PN2
+As Observed:
+
+Addr: 526 KENTUCKY # 6; GRID K-07, San Luis Obi  Clearance Code:No Report
+
+Responsible Officer: Stevens, J
+Units: 4216                ,4265
+ Des: (MDC) Completed call incid#=200219075 call=93l
+CALL COMMENTS: 10-21
+===============================================================================
+200219076 02/19/20 Received:18:22 Dispatched:19:11 Arrived:19:33 Cleared:19:35
+===============================================================================
+Type: Welfare Check                                           Location:PN1
+As Observed:
+
+Addr: 693 PASATIEMPO; GRID H-04, San Luis Obisp  Clearance Code:Unable to Locate
+
+Responsible Officer: Peck, D
+Units: 4259                ,S5
+ Des: incid#=200219076 Completed call disp:NR clr:UTL call=94l
+CALL COMMENTS: CHILD WALKING AROUND ASKING FOR MONEY FOR ITALY, RP CONCERNED CAU
+===============================================================================
+200219077 02/19/20 Received:18:26 Dispatched:18:27 Arrived:18:34 Cleared:18:38
+===============================================================================
+Type: Alarm Silent                                            Location:PN13
+As Observed:
+
+Addr: 269 MADONNA; MASSAGE ENVY SPA; GRID I-13,  Clearance Code:ALARM-HUMAN ERRO
+
+Responsible Officer: Berrios, G
+Units: 4216                ,4264                ,4232                ,4225
+ Des: incid#=200219077 Completed call disp:NR clr:EE call=95l
+CALL COMMENTS: PANIC ALARM
+===============================================================================
+200219078 02/19/20 Received:18:34 Dispatched:19:15 Arrived:19:27 Cleared:19:42
+===============================================================================
+Type: Suspicious                                              Location:PN8
+As Observed:
+
+Addr: 1592 MADONNA # 111; GRID F-14, San Luis O  Clearance Code:No Report
+
+
+
+Responsible Officer: Berrios, G
+Units: 4216
+ Des: (MDC) Completed call incid#=200219078 call=96l
+CALL COMMENTS: 10-21 RP
+===============================================================================
+200219079 02/19/20 Received:18:47 Dispatched:18:54 Arrived:      Cleared:18:54
+===============================================================================
+Type: Information                                             Location:PN6
+As Observed:
+
+Addr: 2139 BEEBEE; GRID J-11, San Luis Obispo,   Clearance Code:No Report
+
+Responsible Officer: Hixenbaugh, D
+Units: COM4
+ Des: incid#=200219079 Completed call disp:NR clr:NR call=97l
+CALL COMMENTS: C3 K9 BIT SUSPECT - NEG ON STAGE
+===============================================================================
+200219080 02/19/20 Received:19:03 Dispatched:19:06 Arrived:19:23 Cleared:19:30
+===============================================================================
+Type: Disorderly                                              Location:PN11
+As Observed:
+
+Addr: SACRAMENTO & INDUSTRIAL; GRID M-15, San L  Clearance Code:Unable to Locate
+
+Responsible Officer: Tyler, B
+Units: 4263                ,4205
+ Des: (MDC) Completed call incid#=200219080 call=99l
+CALL COMMENTS: FEMALE SCREAMING THAT MALE CHOKED HER AND THREW HER OFF THE BIKE
+===============================================================================
+200219081 02/19/20 Received:19:07 Dispatched:19:12 Arrived:19:19 Cleared:19:22
+===============================================================================
+Type: Suspicious                                              Location:PN2
+As Observed:
+
+Addr: 1124 MURRAY; GRID J-07, San Luis Obispo,   Clearance Code:No Report
+
+Responsible Officer: Phillips, K
+Units: S5
+ Des: (MDC) Completed call incid#=200219081 call=100l
+CALL COMMENTS: AREA CHECK
+===============================================================================
+200219082 02/19/20 Received:19:42 Dispatched:19:45 Arrived:19:51 Cleared:20:10
+===============================================================================
+Type: Suspicious                                              Location:PN11
+As Observed:
+
+Addr: BROAD & TANK FARM; GRID M-16, San Luis Ob  Clearance Code:Field Interview
+
+Responsible Officer: Tyler, B
+Units: 4263                ,4205                ,4216
+ Des: (MDC) Completed call incid#=200219082 call=102l
+CALL COMMENTS: MALE IS WALKING 2 BIKES - W/ LIGHTS BLINKING
+
+===============================================================================
+200219083 02/19/20 Received:19:56 Dispatched:      Arrived:19:56 Cleared:20:17
+===============================================================================
+Type: Traffic Offense                                         Location:PN13
+As Observed:
+      Traffic Offense
+
+Addr: 1502 FROOM RANCH; BEV MO; GRID G-15, San   Clearance Code:Report Approved/
+
+Responsible Officer: Peck, D
+Units: 4259                ,4216
+ Des: incid#=200219083 Completed call clr:RTF call=103l
+CALL COMMENTS: 20:17:06 02/19/2020 - Hixenbaugh, D - From: Peck, D
+===============================================================================
+200219084 02/19/20 Received:19:58 Dispatched:20:12 Arrived:20:14 Cleared:20:27
+===============================================================================
+Type: NOISE POLICE                                            Location:PN11
+As Observed:
+      Noise Party
+
+Addr: 990 INDUSTRIAL; GRADUATE; GRID N-15, San   Clearance Code:No Report
+
+Responsible Officer: Behrens, J
+Units: 4205                ,4263
+ Des: (MDC) Completed call incid#=200219084 call=105l
+CALL COMMENTS: LOUD MUSIC
+===============================================================================
+200219085 02/19/20 Received:20:17 Dispatched:20:19 Arrived:20:27 Cleared:20:31
+===============================================================================
+Type: Disorderly                                              Location:PN6
+As Observed:
+
+Addr: PISMO & OSOS; GRID K-10, San Luis Obispo,  Clearance Code:No Report
+
+Responsible Officer: Peck, D
+Units: 4259                ,4216
+ Des: (MDC) Completed call incid#=200219085 call=106l
+CALL COMMENTS: TRANSIENT MALE 415V W/ PASSERBY AND HIMSELF
+===============================================================================
+200219086 02/19/20 Received:20:43 Dispatched:20:45 Arrived:20:51 Cleared:20:57
+===============================================================================
+Type: Loitering                                               Location:PN5
+As Observed:
+
+Addr: 893 MARSH; POST OFFICE; GRID K-09, San Lu  Clearance Code:No Report
+
+Responsible Officer: Peck, D
+Units: 4259                ,4263
+ Des: (MDC) Completed call incid#=200219086 call=107l
+CALL COMMENTS: TRANSIENT MALE JUST ALMOST PEED ON RP'S FEET JUST OUTSIDE FRONT D
+===============================================================================
+200219087 02/19/20 Received:21:16 Dispatched:      Arrived:21:16 Cleared:21:19
+===============================================================================
+
+
+Type: Suspicious                                              Location:PN12
+As Observed:
+
+Addr: 3985 HIGUERA S; FOOD 4 LESS; GRID I-17, S  Clearance Code:No Report
+
+Responsible Officer: Peck, D
+Units: 4259
+ Des: (MDC) Completed call incid#=200219087 call=108l
+CALL COMMENTS: 21:19:50 02/19/2020 - Peck, D
+===============================================================================
+200219088 02/19/20 Received:21:18 Dispatched:21:24 Arrived:21:31 Cleared:21:43
+===============================================================================
+Type: Loitering                                               Location:PN1
+As Observed:
+      Loitering
+
+Addr: 17 CHORRO; STARBUCKS; GRID J-06, San Luis  Clearance Code:No Report
+
+Responsible Officer: Newton, J
+Units: 4246                ,4259
+ Des: (MDC) Completed call incid#=200219088 call=109l
+CALL COMMENTS: TRANSIENT FEMALE IN BATHROOM REFUSING TO LEAVE
+===============================================================================
+200219089 02/19/20 Received:21:40 Dispatched:21:47 Arrived:21:56 Cleared:22:04
+===============================================================================
+Type: Information                                             Location:PN12
+As Observed:
+
+Addr: 3985 HIGUERA S; FOOD 4 LESS; GRID I-17, S  Clearance Code:No Report
+
+Responsible Officer: Peck, D
+Units: 4259
+ Des: (MDC) Completed call incid#=200219089 call=110l
+CALL COMMENTS: 1021 RP
+===============================================================================
+200219090 02/19/20 Received:22:02 Dispatched:22:11 Arrived:22:20 Cleared:22:31
+===============================================================================
+Type: MC-SLEEPING                                             Location:PN8
+As Observed:
+
+Addr: 1500 ETO; GRID F-15, San Luis Obispo, CA   Clearance Code:72HR TAG FOR 112
+
+Responsible Officer: Tyler, B
+Units: 4263                ,4259
+ Des: (MDC) Completed call incid#=200219090 call=112l
+CALL COMMENTS: PEOPLE HAVE BEEN SLEEPING IN WHI/GRY RV L/6NCR285 PARKED IFO MAIL
+===============================================================================
+200219091 02/19/20 Received:22:13 Dispatched:22:15 Arrived:22:25 Cleared:23:00
+===============================================================================
+Type: Trespassing                                             Location:PN6
+As Observed:
+      Trespassing
+
+
+
+Addr: 364 PACIFIC; GRID J-10, San Luis Obispo,   Clearance Code:Field Interview
+
+Responsible Officer: Behrens, J
+Units: 4205                ,4216
+ Des: (MDC) Completed call incid#=200219091 call=113l
+CALL COMMENTS: 2 MALES CAMPING OUT ON LANDING IN BACK PLOT AREA
+===============================================================================
+200219092 02/19/20 Received:22:32 Dispatched:      Arrived:22:32 Cleared:22:35
+===============================================================================
+Type: 9-1-1 ABANDON                                           Location:PN3
+As Observed:
+
+Addr: 1800 MONTEREY; KINNEY HOTEL; GRID L-07, S  Clearance Code:No Report
+
+Responsible Officer: Reece, J
+Units: COM8
+ Des: incid#=200219092 ACCIDENTAL MIS DIAL disp:NR clr:NR call=114l
+CALL COMMENTS: ACCIDENTAL MIS DIAL PER EMP WILL CB BUSN LINE
+===============================================================================
+200219093 02/19/20 Received:22:45 Dispatched:22:50 Arrived:22:54 Cleared:23:22
+===============================================================================
+Type: Loitering                                               Location:LZ0
+As Observed:
+
+Addr: SANTA ROSA N & HIGHLAND; GRID 653 H 2; GR  Clearance Code:No Report
+
+Responsible Officer: Newton, J
+Units: 4246                ,4263
+ Des: (MDC) Completed call incid#=200219093 call=115l
+CALL COMMENTS: 15 TRANSIENTS RIGHT OUTSIDE RP'S WINDOW IN GRASSY AREA TALKING VE
+===============================================================================
+200219094 02/19/20 Received:23:11 Dispatched:23:13 Arrived:23:19 Cleared:23:27
+===============================================================================
+Type: NOISE POLICE                                            Location:PN2
+As Observed:
+
+Addr: 1196 FOOTHILL # 9; GRID J-06, San Luis Ob  Clearance Code:Negative Violati
+
+Responsible Officer: Peck, D
+Units: 4259                ,4263
+ Des: (MDC) Completed call incid#=200219094 call=117l
+CALL COMMENTS: LOUD MUSIC
+===============================================================================
+200219095 02/19/20 Received:23:47 Dispatched:      Arrived:23:48 Cleared:23:50
+===============================================================================
+Type: Assist Req                                              Location:PN5
+As Observed:
+
+Addr: 883 MARSH; SLO BIKE AND RUN; GRID K-09, S  Clearance Code:No Report
+
+
+
+Responsible Officer: Hurni, J
+Units: 4235
+ Des: incid#=200219095 Completed call disp:NR clr:NR call=119l
+CALL COMMENTS: *** XTRA PATROL REQ - 883 MARSH - ON GOING PROBLEM WITH TRANS DEF
+===============================================================================
+200220001 02/20/20 Received:00:30 Dispatched:      Arrived:00:30 Cleared:01:45
+===============================================================================
+Type: Warrant                                                 Location:PN6
+As Observed:
+      Warrant
+
+Addr: 1400 OSOS; MITCHELL PARK; GRID K-10, San   Clearance Code:Report Approved/
+
+Responsible Officer: Behrens, J
+Units: 4205                ,4234
+ Des: incid#=200220001 AP/WRIGHT,ROY 061873 WARRANT clr:RTF oc:WARR call=1l
+CALL COMMENTS: 00:31:37 02/20/2020 - Reece, J
+===============================================================================
+200220002 02/20/20 Received:00:53 Dispatched:      Arrived:00:53 Cleared:01:45
+===============================================================================
+Type: Loitering                                               Location:PN6
+As Observed:
+
+Addr: 1400 OSOS; MITCHELL PARK; GRID K-10, San   Clearance Code:Report Approved/
+
+Responsible Officer: Villanueva, I
+Units: 4234                ,4263
+ Des: incid#=200220002 AP/ BONAS,DENNIS 011560 WARRANT clr:RTF oc:WARR call=3l
+CALL COMMENTS: 01:02:45 02/20/2020 - Reece, J
+===============================================================================
+200220003 02/20/20 Received:01:10 Dispatched:      Arrived:01:11 Cleared:01:14
+===============================================================================
+Type: Towed Vehicle                                           Location:PN11
+As Observed:
+
+Addr: 3245 LAVENDER; GRID M-14, San Luis Obispo  Clearance Code:No Report
+
+Responsible Officer: Reece, J
+Units: COM8
+ Des: incid#=200220003 ENT SVS disp:NR clr:NR call=4l
+CALL COMMENTS: GRY FORD FUSION L/8KJM315
+===============================================================================
+200220004 02/20/20 Received:02:32 Dispatched:      Arrived:02:32 Cleared:02:54
+===============================================================================
+Type: Trespassing                                             Location:PN5
+As Observed:
+      Trespass of Real Property
+
+Addr: 919 PALM; PARKING STRUCTURE; GRID K-09, S  Clearance Code:Report Approved/
+
+Responsible Officer: Tyler, B
+Units: 4263
+ Des: incid#=200220004 Completed call clr:RTF oc:TPAS call=5l
+CALL COMMENTS: 02:52:05 02/20/2020 - Hixenbaugh, D - From: Tyler, B
+
+===============================================================================
+200220005 02/20/20 Received:02:49 Dispatched:02:52 Arrived:02:57 Cleared:03:12
+===============================================================================
+Type: Disorderly                                              Location:PN5
+As Observed:
+      Disorderly Conduct
+
+Addr: 800 BLK HIGUERA; GRID K-09, San Luis Obis  Clearance Code:Field Interview
+
+Responsible Officer: Newton, J
+Units: 4246                ,4259                ,4263
+ Des: (MDC) Completed call incid#=200220005 call=7l
+CALL COMMENTS: MALE SCREAMING AT PASSERSBY TRYING TO START A FIGHT LS TWDS 700 B
+===============================================================================
+200220006 02/20/20 Received:03:34 Dispatched:      Arrived:03:34 Cleared:03:41
+===============================================================================
+Type: MUNI CODE VIOL                                          Location:PN2
+As Observed:
+
+Addr: 190 SANTA ROSA; SRP; GRID J-07, San Luis   Clearance Code:Citation
+
+Responsible Officer: Peck, D
+Units: 4259                ,4205
+ Des: incid#=200220006 Completed call disp:NR clr:CIT call=8l
+CALL COMMENTS:
+===============================================================================
+200220007 02/20/20 Received:04:23 Dispatched:      Arrived:04:23 Cleared:04:45
+===============================================================================
+Type: Suspicious                                              Location:PN1
+As Observed:
+
+Addr: FERRINI & FOOTHILL; GRID I-06, San Luis O  Clearance Code:No Report
+
+Responsible Officer: Peck, D
+Units: 4259                ,4246                ,4263
+ Des: (MDC) Completed call incid#=200220007 call=9l
+CALL COMMENTS: 04:45:08 02/20/2020 - Peck, D
+===============================================================================
+200220008 02/20/20 Received:04:50 Dispatched:04:53 Arrived:04:59 Cleared:05:18
+===============================================================================
+Type: Assist Req                                              Location:PN5
+As Observed:
+      Agency Assist
+
+Addr: 1144 MORRO; PACIFIC PREMIER BANK; GRID K-  Clearance Code:Field Interview
+
+Responsible Officer: Newton, J
+Units: 4246                ,4259
+ Des: (MDC) Completed call incid#=200220008 call=10l
+CALL COMMENTS: SOME ONE ATTEMPTED TO STEAL RP'S FANNY PACK
+===============================================================================
+200220009 02/20/20 Received:06:35 Dispatched:06:38 Arrived:06:48 Cleared:06:51
+===============================================================================
+
+Type: Loitering                                               Location:PN10
+As Observed:
+
+Addr: 2225 EXPOSITION # 19; GRID J-12, San Luis  Clearance Code:No Report
+
+Responsible Officer: Tyler, B
+Units: 4263                ,4259
+ Des: (MDC) Completed call incid#=200220009 call=11l
+CALL COMMENTS: TRANSIENT MALE HAS BEEN SLEEPING IN THE BUSHES BEHIND RP'S RES SE
+===============================================================================
+200220010 02/20/20 Received:06:51 Dispatched:07:01 Arrived:07:41 Cleared:07:51
+===============================================================================
+Type: Welfare Check                                           Location:PN6
+As Observed:
+      Welfare Check
+
+Addr: 1011 RAILROAD; AMTRAK RAILROAD STATION; G  Clearance Code:No Report
+
+Responsible Officer: Womack, M
+Units: 4254                ,4253
+ Des: (MDC) Completed call incid#=200220010 call=12l
+CALL COMMENTS: BUS STOP
+--------------------------------------------------------------------------------
+    Total Incidents for This Report:
+--------------------------------------------------------------------------------
+Report Includes:
+All dates between `07:00:00 02/19/20` and `07:00:00 02/20/20`
+All agencies matching `SLP*`
+All officers
+All dispositions
+All natures
+All locations
+All cities
+All clearance codes
+All observed offenses
+All reported offenses
+--------------------------------------------------------------------------------
+                  *** End of Report /tmp/rpt7BwXUL-rpcdsum.r2_1 ***
