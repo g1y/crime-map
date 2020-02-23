@@ -8,30 +8,28 @@ def parse_log(log_contents):
 	combined = combine_header_body(lines)
 	return map(parse_entry, combined)
 
-report_num_pattern          = re.compile("([0-9]+)\s")
-date_pattern                = re.compile("[0-9]+\s([0-9\/]+)\s")
-received_pattern            = re.compile("Received:([0-9]{2}:[0-9]{2})\s")
-dispatched_pattern          = re.compile("Dispatched:([0-9]{2}:[0-9]{2})\s")
-arrived_pattern             = re.compile("Arrived:([0-9]{2}:[0-9]{2})\s")
-cleared_pattern             = re.compile("Cleared:([0-9]{2}:[0-9]{2})\s")
-type_pattern                = re.compile("Type:\s*([a-zA-Z0-9]+)")
-location_pattern            = re.compile("Location:(\S*)")
-address_pattern             = re.compile("Addr: (.*)Clearance Code")
-grid_pattern                = re.compile("; GRID (.*)(,|;)")
-clearance_code_pattern      = re.compile("Clearance Code: (\S*)\s")
-responsible_officer_pattern = re.compile("Responsible Officer: (\S*, .)")
-call_comments_pattern       = re.compile("CALL COMMENTS: (.*)\n")
-description_pattern         = re.compile("Des:(.*)incid")
+address_pattern = re.compile("Addr: (.*)Clearance Code")
+date_pattern = re.compile("[0-9]+\s([0-9\/]+)\s")
+
+simple_fields = {
+	'report_number': re.compile("([0-9]+)\s"),
+	'received': re.compile("Received:([0-9]{2}:[0-9]{2})\s"),
+	'dispatched': re.compile("Dispatched:([0-9]{2}:[0-9]{2})\s"),
+	'arrived': re.compile("Arrived:([0-9]{2}:[0-9]{2})\s"),
+	'cleared': re.compile("Cleared:([0-9]{2}:[0-9]{2})\s"),
+	'type': re.compile("Type:\s*([a-zA-Z0-9]+)"),
+	'location': re.compile("Location:(\S*)"),
+	'grid': re.compile("; GRID (.*)(,|;)"),
+	'clearance_code': re.compile("Clearance Code: (\S*)\s"),
+	'responsible_officer': re.compile("Responsible Officer: (\S*, .)"),
+	"call_comments": re.compile("CALL COMMENTS: (.*)\n"),
+	"description": re.compile("Des:(.*)incid"),
+}
 
 def parse_entry(line):
 	entry = {'raw': line}
 
-	match = report_num_pattern.match(line)
-	if match:
-		entry["report_number"] = match.group(1)
-
-	match = date_pattern.search(line)
-	if match:
+	if match := date_pattern.search(line):
 		dateString = match.group(1)
 		entry["date"] = dateString
 		month, day, yearSmall = re.split(r"\/", dateString)
@@ -40,40 +38,16 @@ def parse_entry(line):
 		timestamp = date.timestamp()
 		entry["timestamp"] = int(timestamp)
 
-	if search := received_pattern.search(line):
-		entry["received"] = search.group(1)
-
-	if search := dispatched_pattern.search(line):
-		entry["received"] = search.group(1)
-
-	if search := arrived_pattern.search(line):
-		entry["arrived"] = search.group(1)
-
-	if search := cleared_pattern.search(line):
-		entry["cleared"] = search.group(1)
-
-	if search := type_pattern.search(line):
-		entry["type"] = search.group(1)
-
-	if search := location_pattern.search(line):
-		entry["location"] = search.group(1)
-
 	if search := address_pattern.search(line):
 		address_line = search.group(1)
 		address_sections = re.split(";", address_line)
 		entry["address"] = address_sections[0]
 
-	if search := clearance_code_pattern.search(line):
-		entry["clearance_code"] = search.group(1)
 
-	if search := responsible_officer_pattern.search(line):
-		entry["responsible_officer"] = search.group(1)
-
-	if search := call_comments_pattern.search(line):
-		entry["call_comments"] = search.group(1)
-
-	if search := description_pattern.search(line):
-		entry["description"] = search.group(1)
+	for field_name in simple_fields:
+		regex = simple_fields[field_name]
+		if search := regex.search(line):
+			entry[field_name] = search.group(1)
 
 	return entry
 
