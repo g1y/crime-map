@@ -1,0 +1,6 @@
+resources:
+    - ../../base
+patchesStrategicMerge:
+    - single-replica.yaml
+    - envs.yaml
+namePrefix: dev-

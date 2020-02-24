@@ -1,45 +1,7 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: crime-map
-  namespace: crime-map
-  annotations:
-    service.beta.kubernetes.io/do-loadbalancer-protocol: "http2"
-    service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
-    service.beta.kubernetes.io/do-loadbalancer-certificate-id: "e1ed8f63-4e8c-476b-8d03-85328de244e7"
-    service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
-spec:
-  selector:
-    app: crime-map-backend
-  type: LoadBalancer
-  ports:
-  - name: https
-    protocol: TCP
-    port: 443
-    targetPort: 5000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: crime-map-backend
-  namespace: crime-map
-spec:
-  selector:
-    app: crime-map-backend
-  type: LoadBalancer
-  ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 5000
-    name: http
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: crime-map-backend
-  namespace: crime-map
-  labels:
-    app: crime-map-backend
 spec:
   replicas: 3
   selector:
@@ -94,3 +56,38 @@ spec:
               - key: key-id
                 path: key-id
                 mode: 511
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crime-map
+  namespace: crime-map
+  annotations:
+    service.beta.kubernetes.io/do-loadbalancer-protocol: "http2"
+    service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
+    service.beta.kubernetes.io/do-loadbalancer-certificate-id: "e1ed8f63-4e8c-476b-8d03-85328de244e7"
+    service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
+spec:
+  selector:
+    app: crime-map-backend
+  type: LoadBalancer
+  ports:
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crime-map-backend
+  namespace: crime-map
+spec:
+  selector:
+    app: crime-map-backend
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+    name: http

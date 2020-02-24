@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crime-map-backend
+spec:
+  template:
+    spec:
+      containers:
+        - name: crime-map-backend
+          env:
+            - name: "FLASK_ENV"
+              value: "production"

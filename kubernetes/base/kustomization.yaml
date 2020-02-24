@@ -1,0 +1,13 @@
+commonLabels:
+  app: crime-map
+
+namespace: crime-map
+
+resources:
+  - crime-map-ns.yaml
+  - crime-map-backend.yaml
+  - geocoder-cronjob.yaml
+  - log-scraper-cronjob.yaml
+  - zookeeper.yaml
+  - kafka.yaml
+  - mongodb.yaml
