@@ -1,3 +1,0 @@
-[submodule "kubernetes/k8s-cleanup"]
-	path = kubernetes/k8s-cleanup
-	url = https://github.com/g1y/k8s-cleanup.git
