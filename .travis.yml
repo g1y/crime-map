@@ -4,15 +4,7 @@ matrix:
       python:
         - "3.8"
       install:
-        - pip install pipenv
-        - pipenv install --dev
+        - "pip install pipenv"
+        - "cd log-scraper && pipenv install --dev"
       script:
-        - "python -m unittest discover log-scraper"
-
-    - language: python
-      python:
-        - "3.6"
-        - "3.7"
-        - "3.8"
-      script:
-        - "python -m unittest discover ."
+        - "cd log-scraper && pipenv run python -m unittest"
