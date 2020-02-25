@@ -4,6 +4,8 @@ import io
 
 from main import Scraper
 
+from unittest.mock import Mock, MagicMock
+
 class TestParseSLOPDLogs(unittest.TestCase):
 	def setUp(self):
 		self.scraper = Scraper()
@@ -11,7 +13,8 @@ class TestParseSLOPDLogs(unittest.TestCase):
 
 		with open('sample_slopd_log_1.txt', 'r') as sample_file:
 			sample_log = sample_file.read()
-			self.scraper.parse_logs(sample_log)
+			self.scraper.raw_log = sample_log
+			self.scraper.parse_logs()
 
 	def test_parse_log_address(self):
 		sample_file = open('sample_slopd_log.txt', 'r')
@@ -28,3 +31,21 @@ class TestParseSLOPDLogs(unittest.TestCase):
 	def test_scraper(self):
 		self.assertIsNotNone(self.scraper.pulled_log)
 		self.assertGreater(len(self.scraper.pulled_log), 0)
+
+	def test_send_logs(self):
+		attrs = {
+			'find_one.return_value': None,
+			'insert_one.return_value':  type('obj', (object,), {'inserted_id': 1})
+		}
+		self.scraper.logs = Mock(**attrs)
+		self.scraper.send_log_to_kafka = MagicMock()
+
+		total, inserted = self.scraper.send_out_logs()
+
+		self.assertEqual(total, inserted)
+		self.assertEqual(total, len(self.scraper.pulled_log))
+		self.assertGreater(total, 0)
+
+		self.scraper.logs.find_one.assert_called()
+		self.scraper.logs.insert_one.assert_called()
+		self.scraper.send_log_to_kafka.assert_called()
