@@ -7,4 +7,4 @@ matrix:
         - "pip install pipenv"
         - "cd log-scraper && pipenv install --dev"
       script:
-        - "pipenv run python -m unittest"
+        - "python -m unittest"
