@@ -2,6 +2,11 @@
 set -e
 set -u
 
+if [ "$#"  -ne 1 ]; then
+	echo "Usage: ./build.sh <env>"
+	exit 1
+fi
+
 env="$1"
 
 docker build -t crime-map-backend .
@@ -15,5 +20,5 @@ else
 	kubectl config use-context cm-dev
 fi
 
-kubectl rollout restart deployment.apps/crime-map-backend
-kubectl rollout status deployment.apps/crime-map-backend
+kubectl rollout restart deployment.apps/dev-crime-map-backend
+kubectl rollout status deployment.apps/dev-crime-map-backend
