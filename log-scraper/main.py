@@ -7,6 +7,9 @@ import sys
 import logging
 logging.basicConfig()
 logger = logging.getLogger('Scraper')
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
 
 import pycurl
 from pymongo import MongoClient
@@ -24,6 +27,8 @@ class Scraper:
 			logger.info("Connecting to mongodb")
 			client = MongoClient('mongodb')
 			self.logs = client.snoopy.police_logs
+		else:
+			self.logs = None
 
 		self.pulled_log = []
 
@@ -35,40 +40,50 @@ class Scraper:
 		c.perform()
 		c.close()
 		body = buffer.getvalue().decode('iso-8859-1')
-		return body
+		self.raw_log = body
 
-	def parse_logs(self, log):
+	def parse_logs(self):
 		logger.info("Parsing logs")
-		parsed = slopd_log_parse.parse_log(log)
+		parsed = slopd_log_parse.parse_log(self.raw_log)
 		logger.info("Logs parsed")
 
 		self.pulled_log = list(parsed)
 
+
 	def send_out_logs(self):
 		totalInserted = 0
 		totalEntries = 0
-		log = self.fetch_log()
 
-		self.parse_logs(log)
-		parsed = self.pulled_log
-
-		for entry in parsed:
-			totalEntries += 1
-			existing = self.logs.find_one({"report_number": entry["report_number"]})
-			if not existing:
-				id = self.logs.insert_one(entry).inserted_id
-				logger.info(f"{id} - inserting entry")
-				try:
-					#producer.send('log-entries', {'id': id})
-					logger.info(f"{id} - not sent to kafka broker")
-				except Exception as e:
-					sentry_sdk.capture_exception(e)
-
-				totalInserted = totalInserted + 1
+		entered = [self.handle_entry(entry) for entry in self.pulled_log]
+		totalEntries = len(entered)
+		totalInserted = len(list(filter(None, entered)))
 
 		logger.info(f"finished scraping. Created entries: {str(totalInserted)}. Total scraped: {str(totalEntries)}")
+
+		return (totalEntries, totalInserted)
+
+	def handle_entry(self, entry):
+		existing = self.logs.find_one({"report_number": entry["report_number"]})
+		if not existing:
+			id = self.logs.insert_one(entry).inserted_id
+			logger.info(f"{id} - inserting entry")
+			self.send_log_to_kafka(id)
+
+			return True
+		return False
+
+	def send_log_to_kafka(self, id):
+		try:
+			#producer.send('log-entries', {'id': id})
+			logger.info(f"{id} - not sent to kafka broker")
+		except Exception as e:
+			sentry_sdk.capture_exception(e)
 
 
 if __name__ == "__main__":
 	scraper = Scraper()
+	scraper.fetch_log()
+	scraper.parse_logs()
 	scraper.send_out_logs()
+	for handler in logger.handlers:
+		handler.close()
