@@ -6,19 +6,29 @@ import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
+import styled from 'styled-components';
+
 import Dropdown from './dropdown.js';
+
+const ColoringButton = styled(Button)`
+    &.selected {
+        color: #0056b3;
+    }
+`
 
 export default class Header extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            coloring: 'none'
+        }
     }
-    /**
-     *
-        <Dropdown/> <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-        </Form>
-    */
+
+    setColoring(coloring) {
+        this.setState({'coloring': coloring})
+        this.props.setMarkerColoring(coloring)
+    }
 
     render() {
         return <Navbar bg="light" expand="sm">
@@ -27,11 +37,10 @@ export default class Header extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
                 <Nav.Link href="#home">Home</Nav.Link>
-                <Button onClick={() => this.props.setMarkerColoring('type')} variant="link" >Color by Type</Button>
-                <Button onClick={() => this.props.setMarkerColoring('severity')} variant="link" >Color by Severity</Button>
+                <ColoringButton className={ this.state.coloring == "type" ? "selected" : ""} onClick={() => this.setColoring('type')} variant="link" >Color by Type</ColoringButton>
+                <ColoringButton className={ this.state.coloring == "severity" ? "selected" : ""} onClick={() => this.setColoring('severity')} variant="link" >Color by Severity</ColoringButton>
             </Nav>
         </Navbar.Collapse>
         </Navbar>;
     }
 }
-

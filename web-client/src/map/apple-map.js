@@ -14,7 +14,7 @@ export default class AppleMap extends Component {
             markers: [],
             filters: {},
             coloring: null,
-            markerColoring: 'type',
+            markerColoring: 'none',
             self: self,
         };
 
@@ -149,7 +149,7 @@ export default class AppleMap extends Component {
             this.map.addAnnotations(crimeMarkers.map(markers => markers.marker));
         }
 
-        fetch(__API_ROOT__  + '/entries?days=6').then(function(response) {
+        fetch(__API_ROOT__  + '/entries?days=5').then(function(response) {
             return response.json();
         }).then(createMarkers);
     }
