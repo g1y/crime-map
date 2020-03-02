@@ -4,7 +4,17 @@ import Button from 'react-bootstrap/Button';
 
 import { createCrimeMarker } from '../crime-marker';
 
+import styled from 'styled-components';
 
+const MapKit = styled.div`
+    width: 100%;
+    @media all and (min-width: 800px) {
+        width: 50%;
+    }
+
+    height: calc(100% - 56px);
+    position: absolute;
+`
 
 export default class AppleMap extends Component {
     constructor(props) {
@@ -39,7 +49,7 @@ export default class AppleMap extends Component {
         if (this.state.crimeMarkers) {
             this.state.coloring(this.state.crimeMarkers);
         }
-        return <div id="mapKit" ref={this.mapKitDiv}></div>
+        return <MapKit id="mapKit" ref={this.mapKitDiv}></MapKit>
 
     }
 
