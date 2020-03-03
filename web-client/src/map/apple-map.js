@@ -16,6 +16,40 @@ const MapKit = styled.div`
     position: absolute;
 `
 
+const crimeCategories = {
+    "weapon": "severe",
+    "assault": "severe",
+    "burg": "severe",
+    "theft": "severe",
+    "dui": "severe",
+    "graffiti": "severe",
+    "vandalism": "severe",
+    "sex": "severe",
+    "loitering": "medium",
+    "alcohol": "medium",
+    "suspicious": "medium",
+    "disorderly": "medium",
+    "trespassing": "medium",
+    "alarm": "info",
+    "noise": "info",
+    "animal": "info",
+    "keep": "info",
+    "deceased": "info",
+    "towed": "info",
+    "citizen": "info",
+    "public": "info",
+    "found": "info",
+    "lost": "info",
+    "assist": "info",
+    "parking": "info",
+    "traffic": "info",
+    "welfare": "info",
+    "aband": "info",
+    "muni": "info",
+    "coll": "info", // Collision
+    "9": "info",
+}
+
 export default class AppleMap extends Component {
     constructor(props) {
         super(props);
@@ -55,38 +89,6 @@ export default class AppleMap extends Component {
 
     colorMarkersBySeverity() {
         const items = this.state.markers;
-        const crimeCategories = {
-            "assault": "severe",
-            "burg": "severe",
-            "theft": "severe",
-            "dui": "severe",
-            "graffiti": "severe",
-            "vandalism": "severe",
-            "sex": "severe",
-            "loitering": "medium",
-            "alcohol": "medium",
-            "suspicious": "medium",
-            "disorderly": "medium",
-            "trespassing": "medium",
-            "alarm": "info",
-            "noise": "info",
-            "animal": "info",
-            "keep": "info",
-            "deceased": "info",
-            "towed": "info",
-            "citizen": "info",
-            "public": "info",
-            "found": "info",
-            "lost": "info",
-            "assist": "info",
-            "parking": "info",
-            "traffic": "info",
-            "welfare": "info",
-            "aband": "info",
-            "muni": "info",
-            "coll": "info", // Collision
-            "9": "info",
-        }
 
         const severityToColor = {
             "severe": "#dc3545",
