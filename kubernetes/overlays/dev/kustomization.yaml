@@ -5,4 +5,5 @@ patchesStrategicMerge:
     - single-replica.yaml
     - envs.yaml
     - local-storage-vc-template.yaml
+    - local-dev-crime-map-backend.yaml
 #namePrefix: dev-

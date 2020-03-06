@@ -16,6 +16,7 @@ const StyledSideBar = styled.div`
         display: none;
     }
 
+    height: calc(100vh - 56px);
     right: 0;
     position: absolute;
     padding: 30px;
@@ -31,6 +32,8 @@ const StyledSideBar = styled.div`
         flex-direction: row;
         padding-left: 0;
     }
+
+    overflow-y: scroll;
 `
 
 export default class SideBar extends Component {
@@ -38,18 +41,38 @@ export default class SideBar extends Component {
         super(props)
 
         this.state = {
-            alertList: [
-                {'id': uuidv4(), time: null, name: 'Neighborhood Watch', type: 'watch'},
-                {'id': uuidv4(), time: null, name: 'Friend\'s Place', type: 'watch'},
-                {'id': uuidv4(), time: '13:50', name: '2 officers pulled over', type: 'event'},
-            ]
+            alertList: []
         }
+
+        this.deleteAlert = this.deleteAlert.bind(this)
+    }
+
+    deleteAlert(id) {
+        this.setState({
+            alertList: this.state.alertList.filter(alert => alert._id != id),
+        })
+    }
+
+    componentDidMount() {
+        this.getAllAlerts()
+    }
+
+    getAllAlerts() {
+        return fetch(`${__API_ROOT__}/alerts`)
+        .then((res) => res.json())
+        .then((json) => {
+            this.setState({
+                alertList: json
+            })
+        }).catch((err) => {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        })
     }
 
     createAlertHandler() {
         const list = this.state.alertList
         list.push({
-            id: uuidv4(),
+            _id: uuidv4(),
             time: null,
             name: 'New Alert',
             type: null,
@@ -60,8 +83,8 @@ export default class SideBar extends Component {
 
     render() {
         const alertList = this.state.alertList.map((alertData) => {
-            return <Alert key={alertData.id} id={alertData.id} time={alertData.time}
-                name={alertData.name} type={alertData.type} new={alertData.new}></Alert>
+            return <Alert key={alertData._id} id={alertData._id} time={alertData.time}
+                name={alertData.name} type={alertData.type} new={alertData.new} deleteSelf={this.deleteAlert}></Alert>
         })
 
         return <StyledSideBar>

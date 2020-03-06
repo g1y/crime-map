@@ -12,7 +12,7 @@ const MapKit = styled.div`
         width: 50%;
     }
 
-    height: calc(100% - 56px);
+    height: calc(100vh - 56px);
     position: absolute;
 `
 

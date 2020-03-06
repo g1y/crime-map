@@ -3,7 +3,42 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 
+import FontAwesome from 'react-fontawesome';
+
+const Input = styled.input`
+    border: none;
+
+    &:focus {
+        border-bottom: 1px solid black;
+    }
+
+    color: #555;
+    background: #f8f9fa;
+
+    margin-bottom: 10px;
+    font-size: 24px;
+`
+
+
+const EditControls = styled.div`
+    justify-content: flex-end;
+    display: flex;
+
+    .saveButton {
+        margin: 20px;
+    }
+
+`
+
 const StyledAlert = styled.div`
+    &.editing {
+        /* border-color: blue; */
+        /* position: absolute; */
+        width: 820px;
+        height: 400px;
+    }
+
+    transition: height .1s, width .1s linear;
     color: #555;
     margin: 10px 20px 10px 0;
     padding: 20px;
@@ -17,13 +52,10 @@ const StyledAlert = styled.div`
 
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 
     p {
         color: #888;
-    }
-
-    .saveButton {
-        align-self: flex-end;
     }
 
 `
@@ -32,17 +64,18 @@ export default class Alert extends Component {
     constructor(props) {
         super(props)
 
-        let editing = false
-        if (this.props.new == true) {
-            editing = true
-        }
         this.state = {
-            editing: editing,
+            editing: this.props.new == true,
+            saving: false,
             id: this.props.id,
             time: this.props.time,
             name: this.props.name,
             type: this.props.type,
+            // TODO: Implement radius management
+            radius: 1,
         }
+
+        this.onChange = this.onChange.bind(this)
     }
 
     getLocation() {
@@ -65,9 +98,10 @@ export default class Alert extends Component {
             name: this.state.name,
             type: this.state.type,
             time: this.state.time,
+            radius: this.state.radius,
         }
 
-        return fetch(`{__API_ROOT__}/alerts`, {
+        return fetch(`${__API_ROOT__}/alert`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,14 +110,43 @@ export default class Alert extends Component {
         })
     }
 
+    // TODO Show error message when failed request.
     createWatch() {
+        this.setState({saving: true})
         this.getLocation().then((pos) => {
             const crd = pos.coords;
             return crd
-        }).then(this.sendWatchRequest).then(res => res.json()).then((data) => {
-            console.log("RESPONSE", data)
+        }).then(this.sendWatchRequest.bind(this)).then(res => res.json())
+            .then((data) => {}).then(() => {
+            this.setState({
+                saving: false,
+                editing: false,
+            })
         }).catch((err) => {
             console.warn(`ERROR(${err.code}): ${err.message}`);
+            this.setState({
+                saving: false,
+            })
+
+            throw err
+        })
+    }
+
+    deleteAlert() {
+        fetch(`${__API_ROOT__}/alert/${this.state.id}`, {
+            method: 'DELETE',
+        }).then(this.props.deleteSelf(this.state.id))
+    }
+
+    setEditing() {
+        this.setState({
+            'editing': true
+        })
+    }
+
+    onChange(e) {
+        this.setState({
+            'name': e.currentTarget.value
         })
     }
 
@@ -98,14 +161,27 @@ export default class Alert extends Component {
            descriptionEl = <p>New Alert</p>
         }
 
-        let saveButton = this.state.editing == true ? <Button className="saveButton">Save</Button> : ""
 
-        return <StyledAlert>
-            <h4>{this.props.name}</h4>
+        let saveButton, deleteButton = ""
+        if (this.state.editing == true) {
+            saveButton = <Button disabled={this.saving} className="saveButton"
+                onClick={this.createWatch.bind(this)}>Save</Button>
+            deleteButton = <Button onClick={this.deleteAlert.bind(this)} variant="danger" className="saveButton">Delete</Button>
+        }
+
+        // TODO: Loading spinner!
+        /*<FontAwesome className='super-crazy-colors' name='rocket' size='2x' spin style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>*/
+            /*<FontAwesome name='trash' size='10px' style={{ 'align-self': 'flex-end' }} />*/
+        return <StyledAlert onClick={this.setEditing.bind(this)} className={this.state.editing ? "editing" : ""}>
+            <Input onChange={this.onChange} type="text" value={this.state.name}></Input>
             {descriptionEl}
             {timeEl}
 
-            {saveButton}
+
+            <EditControls>
+                {deleteButton}
+                {saveButton}
+            </EditControls>
         </StyledAlert>
     }
 }
