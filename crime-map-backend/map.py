@@ -7,12 +7,15 @@ import pprint
 
 import json
 from bson import json_util
+import bson
 
 import jwt
 import time
 import os
 
 from mongodb import PoliceLogs, Alerts
+from bson import objectid
+
 
 from alert import Alert, WatchNotFoundException
 
@@ -114,20 +117,36 @@ def create_alert():
     #user = User(email)
 
     inserted = None
+    print(body)
+    try:
+        id = objectid.ObjectId(body['id'])
+    except bson.errors.InvalidId:
+        id = None
+
+    id_filter= {'_id': id}
     with Alerts() as alerts:
-        inserted = alerts.insert_one(body)
+        if id and len(list(alerts.find_one(id_filter))):
+            body['_id'] = id
+            del body['id']
+            update = { '$set': body }
+            alerts.update_one(id_filter, update)
+        else:
+            inserted = alerts.insert_one(body)
+            id = inserted.inserted_id
 
-    watch_dict = Alert(inserted.inserted_id).__dict__
+    alert_dict = Alert(id).__dict__
 
-    return json.dumps(watch_dict)
+    return json.dumps(alert_dict)
 
 @app.route('/alert/<id>', methods=["DELETE"])
 def delete_alert(id):
     # TODO Check for correct ownership before removal
     with Alerts() as alerts:
-        alerts.remove(id)
+        result = alerts.delete_one({'_id': objectid.ObjectId(id)})
+        if result.deleted_count != 1:
+            return json.dumps({"success": False}), 404
 
-    return ""
+    return json.dumps({"success": True})
 
 @app.route('/alerts')
 def get_all_alerts():

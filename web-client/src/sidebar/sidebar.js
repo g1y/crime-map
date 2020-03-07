@@ -49,7 +49,7 @@ export default class SideBar extends Component {
 
     deleteAlert(id) {
         this.setState({
-            alertList: this.state.alertList.filter(alert => alert._id != id),
+            alertList: this.state.alertList.filter(alert => alert.id != id),
         })
     }
 
@@ -61,8 +61,13 @@ export default class SideBar extends Component {
         return fetch(`${__API_ROOT__}/alerts`)
         .then((res) => res.json())
         .then((json) => {
+            const alerts = json.map((alert) => {
+                alert.id = alert._id
+                return alert
+            })
+
             this.setState({
-                alertList: json
+                alertList: alerts,
             })
         }).catch((err) => {
             console.warn(`ERROR(${err.code}): ${err.message}`);
@@ -72,7 +77,8 @@ export default class SideBar extends Component {
     createAlertHandler() {
         const list = this.state.alertList
         list.push({
-            _id: uuidv4(),
+            // This is just temporary until we get the id from mongo
+            id: uuidv4(),
             time: null,
             name: 'New Alert',
             type: null,
@@ -83,7 +89,7 @@ export default class SideBar extends Component {
 
     render() {
         const alertList = this.state.alertList.map((alertData) => {
-            return <Alert key={alertData._id} id={alertData._id} time={alertData.time}
+            return <Alert key={alertData.id} id={alertData.id} time={alertData.time}
                 name={alertData.name} type={alertData.type} new={alertData.new} deleteSelf={this.deleteAlert}></Alert>
         })
 

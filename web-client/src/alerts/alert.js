@@ -73,9 +73,13 @@ export default class Alert extends Component {
             type: this.props.type,
             // TODO: Implement radius management
             radius: 1,
+            new: false,
         }
 
         this.onChange = this.onChange.bind(this)
+        this.createAlert = this.createAlert.bind(this)
+        this.deleteAlert = this.deleteAlert.bind(this)
+        this.setEditing = this.setEditing.bind(this)
     }
 
     getLocation() {
@@ -91,37 +95,36 @@ export default class Alert extends Component {
     }
 
     sendWatchRequest(crd) {
-        const data = {
+        this.setState({
             lat: crd.latitude,
             lng: crd.longitude,
             accuracy: crd.accuracy,
-            name: this.state.name,
-            type: this.state.type,
-            time: this.state.time,
-            radius: this.state.radius,
-        }
+        })
 
         return fetch(`${__API_ROOT__}/alert`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(this.state),
         })
     }
 
     // TODO Show error message when failed request.
-    createWatch() {
+    createAlert() {
         this.setState({saving: true})
         this.getLocation().then((pos) => {
             const crd = pos.coords;
             return crd
         }).then(this.sendWatchRequest.bind(this)).then(res => res.json())
-            .then((data) => {}).then(() => {
-            this.setState({
-                saving: false,
-                editing: false,
-            })
+            .then((data) => {
+                console.log(data)
+                this.setState({
+                    id: data.id,
+                    saving: false,
+                    editing: false,
+                    new: false,
+                })
         }).catch((err) => {
             console.warn(`ERROR(${err.code}): ${err.message}`);
             this.setState({
@@ -135,7 +138,10 @@ export default class Alert extends Component {
     deleteAlert() {
         fetch(`${__API_ROOT__}/alert/${this.state.id}`, {
             method: 'DELETE',
-        }).then(this.props.deleteSelf(this.state.id))
+        }).then(resp => { resp.json() }).then((data) => {
+            console.log(data);
+            this.props.deleteSelf(this.state.id)
+        })
     }
 
     setEditing() {
@@ -155,7 +161,7 @@ export default class Alert extends Component {
         if (this.props.time) {
            timeEl = <p>spotted around {this.props.time}</p>
            descriptionEl = <p>Event sighted</p>
-        } else if (this.props.type == 'watch') {
+        } else if (this.props.type == 'alert') {
            descriptionEl = <p>Persistent alert</p>
         } else {
            descriptionEl = <p>New Alert</p>
@@ -164,9 +170,11 @@ export default class Alert extends Component {
 
         let saveButton, deleteButton = ""
         if (this.state.editing == true) {
-            saveButton = <Button disabled={this.saving} className="saveButton"
-                onClick={this.createWatch.bind(this)}>Save</Button>
-            deleteButton = <Button onClick={this.deleteAlert.bind(this)} variant="danger" className="saveButton">Delete</Button>
+            saveButton = <Button disabled={this.state.saving} className="saveButton"
+                onClick={this.state.saving ? null : this.createAlert}>Save</Button>
+            deleteButton = <Button disabled={this.state.saving}
+                onClick={this.state.saving ? null : this.deleteAlert} variant="danger"
+                className="saveButton">Delete</Button>
         }
 
         // TODO: Loading spinner!
