@@ -25,7 +25,7 @@ const EditControls = styled.div`
     display: flex;
 
     .saveButton {
-        margin: 20px;
+        margin: 10px;
     }
 
 `
@@ -41,7 +41,7 @@ const StyledAlert = styled.div`
     transition: height .1s, width .1s linear;
     color: #555;
     margin: 10px 20px 10px 0;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     border: 2px solid #eee;
     background: #f8f9fa;
     /* top: -100px;*/
@@ -73,7 +73,7 @@ export default class Alert extends Component {
             type: this.props.type,
             // TODO: Implement radius management
             radius: 1,
-            new: false,
+            new: this.props.new,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -118,13 +118,13 @@ export default class Alert extends Component {
             return crd
         }).then(this.sendWatchRequest.bind(this)).then(res => res.json())
             .then((data) => {
-                console.log(data)
                 this.setState({
                     id: data.id,
                     saving: false,
                     editing: false,
                     new: false,
                 })
+                this.props.saveHandler(data.id)
         }).catch((err) => {
             console.warn(`ERROR(${err.code}): ${err.message}`);
             this.setState({
@@ -136,12 +136,18 @@ export default class Alert extends Component {
     }
 
     deleteAlert() {
-        fetch(`${__API_ROOT__}/alert/${this.state.id}`, {
-            method: 'DELETE',
-        }).then(resp => { resp.json() }).then((data) => {
-            console.log(data);
+        console.log(this.state.new)
+        if (this.state.new) {
             this.props.deleteSelf(this.state.id)
-        })
+        } else {
+            console.log("Delete request")
+            fetch(`${__API_ROOT__}/alert/${this.state.id}`, {
+                method: 'DELETE',
+            }).then(resp => { resp.json() }).then((data) => {
+                console.log("Done deleting")
+                this.props.deleteSelf(this.state.id)
+            })
+        }
     }
 
     setEditing() {
@@ -171,9 +177,9 @@ export default class Alert extends Component {
         let saveButton, deleteButton = ""
         if (this.state.editing == true) {
             saveButton = <Button disabled={this.state.saving} className="saveButton"
-                onClick={this.state.saving ? null : this.createAlert}>Save</Button>
+                onClick={this.state.saving ? null : this.createAlert} variant="primary">Save</Button>
             deleteButton = <Button disabled={this.state.saving}
-                onClick={this.state.saving ? null : this.deleteAlert} variant="danger"
+                onClick={this.state.saving ? null : this.deleteAlert} variant="outline-danger"
                 className="saveButton">Delete</Button>
         }
 

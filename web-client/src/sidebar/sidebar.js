@@ -45,6 +45,7 @@ export default class SideBar extends Component {
         }
 
         this.deleteAlert = this.deleteAlert.bind(this)
+        this.createAlertHandler = this.createAlertHandler.bind(this)
     }
 
     deleteAlert(id) {
@@ -63,6 +64,7 @@ export default class SideBar extends Component {
         .then((json) => {
             const alerts = json.map((alert) => {
                 alert.id = alert._id
+                alert.new = false
                 return alert
             })
 
@@ -75,27 +77,38 @@ export default class SideBar extends Component {
     }
 
     createAlertHandler() {
+        console.log("TESTING")
         const list = this.state.alertList
-        list.push({
+        const alertData = {
             // This is just temporary until we get the id from mongo
             id: uuidv4(),
             time: null,
             name: 'New Alert',
             type: null,
             new: true,
-        })
+        }
+
+        alertData.savedHandler = (id) => {
+            alertData.new = false
+            if (id) {
+                alertData.id = id
+            }
+        }
+        list.push(alertData)
         this.setState({alertList: list})
     }
 
     render() {
+        console.log("RENDER")
         const alertList = this.state.alertList.map((alertData) => {
             return <Alert key={alertData.id} id={alertData.id} time={alertData.time}
-                name={alertData.name} type={alertData.type} new={alertData.new} deleteSelf={this.deleteAlert}></Alert>
+                name={alertData.name} type={alertData.type} new={alertData.new}
+                deleteSelf={this.deleteAlert} saveHandler={alertData.saveHandler}></Alert>
         })
 
         return <StyledSideBar>
             <h2>Police Log Alerts</h2>
-            <CreateAlert onSubmit={this.createAlertHandler.bind(this)}></CreateAlert>
+            <CreateAlert onSubmit={this.createAlertHandler}></CreateAlert>
 
             <ul>
                 {alertList}

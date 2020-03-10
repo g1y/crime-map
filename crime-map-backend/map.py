@@ -125,7 +125,7 @@ def create_alert():
 
     id_filter= {'_id': id}
     with Alerts() as alerts:
-        if id and len(list(alerts.find_one(id_filter))):
+        if id and alerts.find_one(id_filter):
             body['_id'] = id
             del body['id']
             update = { '$set': body }
