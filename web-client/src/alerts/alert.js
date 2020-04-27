@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-
 import styled from 'styled-components';
-import Button from 'react-bootstrap/Button';
 
 import FontAwesome from 'react-fontawesome';
+
+import Button from 'react-bootstrap/Button';
+import AlertTypeSelect from './alert-type-select'
+import SeverityFilter from './severity-filter';
+import LocationFilter from './location-filter';
+
 
 const Input = styled.input`
     border: none;
@@ -18,7 +22,6 @@ const Input = styled.input`
     margin-bottom: 10px;
     font-size: 24px;
 `
-
 
 const EditControls = styled.div`
     justify-content: flex-end;
@@ -74,16 +77,23 @@ export default class Alert extends Component {
             // TODO: Implement radius management
             radius: 1,
             new: this.props.new,
+            location: this.props.location,
         }
 
         this.onChange = this.onChange.bind(this)
         this.createAlert = this.createAlert.bind(this)
         this.deleteAlert = this.deleteAlert.bind(this)
         this.setEditing = this.setEditing.bind(this)
+        this.updateLocation = (location) => {
+            this.setState({
+                location: location,
+            })
+        }
     }
 
+
     getLocation() {
-        var options = {
+        let options = {
             enableHighAccuracy: true,
             timeout: 5000,
             maximumAge: 0
@@ -118,13 +128,16 @@ export default class Alert extends Component {
             return crd
         }).then(this.sendWatchRequest.bind(this)).then(res => res.json())
             .then((data) => {
+                if (this.state.new) {
+                    this.props.saveHandler(data.id)
+                }
+
                 this.setState({
                     id: data.id,
                     saving: false,
                     editing: false,
                     new: false,
                 })
-                this.props.saveHandler(data.id)
         }).catch((err) => {
             console.warn(`ERROR(${err.code}): ${err.message}`);
             this.setState({
@@ -170,7 +183,14 @@ export default class Alert extends Component {
         } else if (this.props.type == 'alert') {
            descriptionEl = <p>Persistent alert</p>
         } else {
-           descriptionEl = <p>New Alert</p>
+           descriptionEl = <p>Event</p>
+        }
+
+        if (this.state.editing) {
+            descriptionEl = <div>
+                <SeverityFilter/>
+                <LocationFilter update={this.updateLocation} value={this.state.location}/>
+            </div>
         }
 
 

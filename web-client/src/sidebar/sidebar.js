@@ -6,6 +6,10 @@ import Alert from '../alerts/alert';
 
 import { v4 as uuidv4 } from 'uuid';
 
+const StyledAlertsHeader = styled.h2`
+    cursor: pointer;
+`
+
 const StyledSideBar = styled.div`
     width: 100%;
     @media all and (min-width: 800px) {
@@ -41,11 +45,13 @@ export default class SideBar extends Component {
         super(props)
 
         this.state = {
-            alertList: []
+            alertList: [],
+            collapsed: false,
         }
 
         this.deleteAlert = this.deleteAlert.bind(this)
         this.createAlertHandler = this.createAlertHandler.bind(this)
+        this.collapseAlerts = this.collapseAlerts.bind(this)
     }
 
     deleteAlert(id) {
@@ -77,7 +83,6 @@ export default class SideBar extends Component {
     }
 
     createAlertHandler() {
-        console.log("TESTING")
         const list = this.state.alertList
         const alertData = {
             // This is just temporary until we get the id from mongo
@@ -88,7 +93,7 @@ export default class SideBar extends Component {
             new: true,
         }
 
-        alertData.savedHandler = (id) => {
+        alertData.saveHandler = (id) => {
             alertData.new = false
             if (id) {
                 alertData.id = id
@@ -98,21 +103,36 @@ export default class SideBar extends Component {
         this.setState({alertList: list})
     }
 
+    collapseAlerts() {
+        const toggleAlerts = (state,  props) => ({
+            collapsed: !state.collapsed,
+        })
+
+        this.setState(toggleAlerts)
+    }
+
     render() {
-        console.log("RENDER")
         const alertList = this.state.alertList.map((alertData) => {
             return <Alert key={alertData.id} id={alertData.id} time={alertData.time}
                 name={alertData.name} type={alertData.type} new={alertData.new}
                 deleteSelf={this.deleteAlert} saveHandler={alertData.saveHandler}></Alert>
         })
 
-        return <StyledSideBar>
-            <h2>Police Log Alerts</h2>
-            <CreateAlert onSubmit={this.createAlertHandler}></CreateAlert>
+        let alertContainer = null
+        if (!this.state.collapsed) {
+            alertContainer = (
+                <div>
+                    <ul>
+                        {alertList}
+                    </ul>
+                    <CreateAlert onSubmit={this.createAlertHandler}/>
+                </div>
+            )
+        }
 
-            <ul>
-                {alertList}
-            </ul>
+        return <StyledSideBar>
+            <StyledAlertsHeader onClick={this.collapseAlerts}>Alerts</StyledAlertsHeader>
+            {alertContainer}
         </StyledSideBar>
     }
 }
