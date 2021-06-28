@@ -41,3 +41,6 @@ spec:
           value: "0"
         - name: KAFKA_CREATE_TOPICS
           value: admintome-test:1:1
+  selector:
+    matchLabels:
+      app: kafka-broker
