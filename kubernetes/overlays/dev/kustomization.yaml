@@ -7,4 +7,5 @@ patchesStrategicMerge:
     - single-replica.yaml
     - envs.yaml
     - use-local-storage-for-mongo.yaml
+    - zookeeper-connect-variable.yaml
 namePrefix: dev-
