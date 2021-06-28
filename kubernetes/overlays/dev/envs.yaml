@@ -10,3 +10,5 @@ spec:
           env:
             - name: "FLASK_ENV"
               value: "development"
+            - name: "MONGO_HOST"
+              value: "dev-mongodb"

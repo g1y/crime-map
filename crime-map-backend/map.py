@@ -98,13 +98,18 @@ def sign_jwt():
 
 
 def get_db():
-        client = MongoClient('mongodb', 27017)
-        db = client.snoopy
-        logs = db.signups
-        return logs
+    client = get_mongo_client()
+    db = client.snoopy
+    logs = db.signups
+    return logs
 
 def get_logs_db():
-        client = MongoClient('mongodb', 27017)
-        db = client.snoopy
-        logs = db.police_logs
-        return logs
+    client = get_mongo_client()
+    db = client.snoopy
+    logs = db.police_logs
+    return logs
+
+def get_mongo_client():
+    mongo_host = os.getenv('MONGO_HOST') or 'mongodb'
+    mongo_port = os.getenv('MONGO_PORT') or 27017
+    return MongoClient(mongo_host, mongo_port)
