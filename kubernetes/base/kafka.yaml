@@ -15,7 +15,7 @@ spec:
     id: "0"
 ---
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: kafka-broker
 spec:
@@ -41,3 +41,6 @@ spec:
           value: "0"
         - name: KAFKA_CREATE_TOPICS
           value: admintome-test:1:1
+  selector:
+    matchLabels:
+      app: kafka-broker
